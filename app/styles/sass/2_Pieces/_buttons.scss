@@ -1,0 +1,39 @@
+  ////////////////////////////////
+ // BUTTONS  ////////////////////
+////////////////////////////////
+
+[data-role="button"], 
+button,
+.button {
+    background: $buttonBg;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-size: 1em;
+    color: $white;
+    font-weight: 600;
+    font-family: $openSans;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: .3s ease-in-out; 
+        
+        &:active,
+        &:visited,
+        &:focus {
+            background: $black;
+            color: $white;
+        }
+
+        &:hover {
+            background: $white;
+            border: 1px solid $black;
+            color: $black;
+            text-decoration:none;
+        }
+
+        &::-moz-focus-inner {
+            background: $black;
+            color: $white;
+        }
+
+} // End Button
+

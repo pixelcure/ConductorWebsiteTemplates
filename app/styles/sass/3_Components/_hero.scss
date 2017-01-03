@@ -1,0 +1,40 @@
+  ////////////////////////////////
+ // HERO ////////////////////////
+////////////////////////////////
+
+.hero {
+	overflow: hidden;
+	position: relative;
+	z-index: 100;
+
+	.video-inner {
+		animation: 400ms fadeIn ease-in;
+		box-shadow: none;
+		position: relative;
+	} // End Hero Inner
+
+	&.full-bleed-image {
+		&.contact,
+		&.clients {
+			height: 320px;
+			@include max-screen(485px){
+				height: auto;
+				height: initial;
+			}
+		}
+
+		@include max-screen(665px){
+			height: auto;
+			height: initial;
+		}
+
+		@include max-screen(768px){
+			// height: 250px;
+		}
+		@include max-screen(400px){
+			height: auto;
+			height: initial;
+		}
+	} // End Full Bleed Hero Image
+
+} // End Hero

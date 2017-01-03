@@ -1,0 +1,134 @@
+  /////////////////////////////////////////
+ // Contact //////////////////////////////
+/////////////////////////////////////////
+
+.contact {
+	
+	.middle {
+
+		h2, h3 {
+
+			text-align: center;
+			margin: 60px auto 0 auto;
+			padding: 0 45px;
+			width: 100%;
+		}
+		h3 {
+			color: rgba(0, 0, 0, .7);
+			font-weight: 100;
+			margin: 0 auto 60px auto;
+			text-align: center;
+		}
+
+		.cell {
+			border: 1px solid rgba(53, 53, 53, 0.15);
+			background: rgba(0, 0, 0, .05);
+			font-size: 24px;
+			font-size: 1.500em;
+			padding: 50px;
+			width: 50%;
+			&:first-child, .address {
+				border-right: 0;
+			}
+			&:last-child, .contact {
+				text-align: right;
+			}
+			
+			.block {
+				margin-bottom: 10px;
+				font-weight: 100;
+				&.walk { font-weight: 400; }
+
+				&.phone {
+					background: $black;
+					color: $white;
+					line-height: 1.3em;
+				    padding: 2px 15px;
+					a {
+						color: $white;
+						text-decoration: none;
+					}
+				}
+
+			} // End Text Block
+
+			&.contact {
+				.block {
+					margin-bottom: 15px;
+				}
+			}			
+
+			@include max-screen(767px){
+				display: table;
+				text-align: center;
+				width: 100%;
+
+				&.address {
+					border-left: 0;
+					border-right: 0;
+				}
+				
+				&:last-child,
+				&.contact {
+					border: 0;
+					text-align: center;
+				}
+			}
+		} // End Cell
+	} // End Middle
+
+	.contact-form {
+		&.panes {
+			.pane {
+				color: $white;
+
+				&.form {
+					background: $black;
+					padding: 50px;
+					h4 {
+						font-size: 36px;
+						font-size: 2.250em;
+						margin: 0;
+					}
+					h5 {
+						color: rgba(255, 255, 255, .5);
+						font-size: 24px;
+						font-size: 1.500em;
+						margin: 0;
+					}
+					.contact-form {
+						margin-top: 100px;
+	
+						@include max-screen(960px){
+							margin-top: 45px;
+	
+							fieldset {
+								width: 100%;
+									input,
+									textarea {
+										width: 100%;
+									}
+							}
+						}
+					} // End Contact Form
+				}
+				&.form-image {
+					background: url(../../images/contact-square.jpg) no-repeat top center;
+    				background-size: cover;
+    				@include max-screen(960px){
+    					height: 620px;
+    				}
+				} // End Form Image
+			} // End Pane
+		} // End Panes
+
+	} // End Contact Form
+
+	.office-map {
+		height: 485px;
+		@include max-screen(960px){
+			height: 385px;
+		}
+	} // End Office Map
+
+} // End Contact

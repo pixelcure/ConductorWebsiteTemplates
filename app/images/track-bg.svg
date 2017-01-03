@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="460px" viewBox="0 0 1440 460" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>Track Background</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M30.7968753,47.228774 C30.7968753,47.228774 -48.1866908,47.228774 47.3710938,47.228774 L189.28125,47.228774 L268.380936,47.228774 L548.845263,47.228774 L764.597552,232.22651 L548.845263,411.771226 L30.7968753,411.771224 L30.7968753,47.228774 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="764.464684" height="364.542452" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(0.000000, -1880.000000)">
+            <g id="Call-To-Action---What-We-Do" transform="translate(-43.000000, 1880.000000)">
+                <g id="Track-Background">
+                    <path d="M1516.79571,460 L1736.88531,239.910399 L1496.97491,0 L996.809931,0 L763.917509,232.892421 L991.025088,460 L1516.79571,460 Z" id="Combined-Shape" fill-opacity="0.145295516" fill="#2CBBF7"></path>
+                    <use id="Rectangle-26" stroke="#BAE5F7" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

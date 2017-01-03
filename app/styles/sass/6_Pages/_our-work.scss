@@ -1,0 +1,213 @@
+  /////////////////////////////////////////
+ // Our Work /////////////////////////////
+/////////////////////////////////////////
+
+.our-work {
+
+	.work-item-info {
+		display: none;
+		&.open {
+			display: block;
+		}
+	} // End Work Item Info
+
+	.middle {
+		&.work-intro {
+		    background: rgba(0, 0, 0, .05);
+		    border-top: 1px solid rgba(0, 0, 0, .1);
+		    padding: 45px;
+
+		    .inner {
+		    	h2 {
+    				margin: 0;
+		    	}
+		    } // End Inner
+
+		    @include max-screen(767px){
+		    	text-align: center;
+		    }
+		    		
+		} // End Work Intro
+
+	} // End Middle
+
+	.categories {
+	    overflow: hidden;
+    	margin-top: 5px;
+		
+		@include max-screen(768px){
+			width: 80%;
+		}
+		
+		@include max-screen(767px){
+			width: 100%;
+		}
+
+		li {
+			cursor: pointer;
+		    display: table;
+		    float: left;
+		    font-size: 16px;
+		    font-size: 1em;
+		    margin: 15px 15px 0 0;
+
+		    &:last-child {
+		    	margin-right: 0;
+		    }
+		    
+		    @include max-screen(960px){
+		    	margin-right: 15px;
+		    }
+
+		    @include max-screen(767px){
+			    display: block;
+	    	    float: none;
+			    margin: 25px auto 0;
+				text-align: center;
+			    width: 66%;
+			    &:last-child {
+			    	margin-right: auto;
+			    }
+		    }
+
+		} // End Category
+
+	} // End Categories
+
+	.video-controls {
+		margin-bottom: 40px;
+
+		.controls.right {
+			@include max-screen(767px){
+	    		top: 15px;
+			}
+		} // End Controls
+
+	} // End Video Controls
+
+	.work-item-info {
+		background: $black;
+		color: $white;
+	    padding: 50px 50px 75px;
+		position: relative;
+		
+		@include max-screen(767px){
+			display: block;
+		}
+
+		.work-item-close {
+			cursor: pointer;
+		    color: $white;
+		    font-weight: 100;
+		    font-size: 36px;
+		    height: 50px;
+		    margin: 50px 50px 50px 0;
+		    padding: 10px;
+		    position: absolute;
+		    right: 0;
+		    text-align: center;
+		    top: 0;
+		    width: 50px;
+		    z-index: 1000;
+		    &:before {
+	    	    content: '';
+			    background: white;
+			    height: 50px;
+			    position: absolute;
+			    right: -50px;
+			    top: 0;
+			    transform-origin: right;
+			    transition: 300ms cubic-bezier(0.4, 0, 0.75, 0.64);
+			    width: 0;
+			    z-index: -1;
+		    }
+		    &:hover {
+		    	transition-delay: 300ms;
+				color: $black;
+		    	&:before { width: 100px; }
+		    }
+		    @include max-screen(768px){
+		    	transition: none;
+		    	color: $white;
+		    	&:before {
+		    		opacity: 0;
+		    		transition: none;
+		    	}
+		    	&:hover {
+		    		color: $white;
+		    	}
+		    }
+		} // End Work Item Close
+
+		.client-info {
+			width: 33%;
+			@include max-screen(767px){
+				display: block;
+				width: 100%;
+			}
+			h2 {
+				font-weight: 400;
+				line-height: 1.5em;
+				margin-top: 0;
+			}
+
+			li {
+				margin-bottom: 10px;
+				font-style: italic;
+
+				em {
+				    background: $white;
+				    color: $black;
+				    padding: 2px 5px;
+				    margin-right: 10px;
+				}
+			} // End Info Piece
+
+		} // End Client Info
+
+		.description {
+			font-size: 21px;
+			font-size: 1.313em;
+			line-height: 1.5em;
+			padding-right: 75px;
+			width: 66%;
+			@include max-screen(768px){
+				p {				
+					font-size: 14px;
+				}
+			}
+			@include max-screen(767px){
+				display: block;
+				margin-top: 25px;
+				padding-right: 0;
+				width: 100%;
+			}
+		} // End Work Description
+
+		.logos {
+			margin-top: 75px;
+			@include max-screen(767px){
+				display: block;
+				width: 100%;
+			}
+			li {
+				padding-right: 50px;
+				@include max-screen(767px){
+					display: block;
+					margin-bottom: 35px;
+					padding-right: 0;
+					width: 100%;
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		} // End Work Logos
+
+	} // End Work Item Info
+
+	.work-grid {
+		margin-bottom: 0;
+	} // End Work Grid
+
+} // End Our Work

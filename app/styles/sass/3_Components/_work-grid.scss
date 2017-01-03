@@ -1,0 +1,204 @@
+  /////////////////////////////////////////
+ // Work Grid ////////////////////////////
+/////////////////////////////////////////
+
+.work-grid {
+	display: table;
+    @include box-shadow(1px 10px 15px rgba(0, 0, 0, .3));
+    // @include box-shadow(1px 10px 15px rgba(0, 0, 0, 1));
+    margin-bottom: 100px;
+    position: relative;
+	width: 100%;
+	z-index: 100;
+
+	&:last-child { margin-bottom: 0; }
+
+	.work-type {
+		@extend .panel-table;
+		font-size: 42px;
+		font-size: 2.625em;
+		line-height: 1.3em;
+		letter-spacing: 3px;
+		margin-bottom: 0;
+		padding: 0 45px 45px;
+	} // End Work Type Label
+
+	&.production-stills {
+		.still {
+			border-bottom: 1px solid $white;
+		}
+	} // Ends Stills
+
+	.grid-row {
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		width: 100%;
+
+		.item {
+			display: table;
+			float: left;
+			position: relative;
+			overflow: hidden;
+			width: 50%;
+
+			.item-info {
+				display: none;
+			} // Item Info
+
+			@include max-screen(767px){
+				width: 100%;
+			}
+			
+			a { display: block; }
+
+			.image-container {
+				overflow: hidden;
+				img { 
+					transition: .8s cubic-bezier(0.36, -0.02, 0.21, 1);
+					transition-delay: .05s;
+					vertical-align: bottom; 
+				}
+			} // End Image Container	
+
+			.caption {
+			    background: rgba(0, 0, 0, 0.6);	
+			    border: 5px solid rgba(25, 26, 26, 0.3);
+			    height: 100%;
+			    position: absolute;
+				opacity: 0;
+			    transition: .3s ease-in-out;
+			    width: 100%;
+			    z-index: 100;
+
+			    @include max-screen(768px){
+			    	border: 0;
+			    	opacity: 1;
+			    }
+
+				.inner {
+					overflow: hidden;
+					opacity: 0;
+					position: absolute;
+					top: 50%;
+					@include transform(translateY(150px));
+					transition: .5s;
+					width: 100%;
+
+					@include max-screen(768px){
+						opacity: 1;
+						@include transform(none);
+						top: 55%;
+					}
+
+				    span {
+			    		display: block;
+						text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+
+				    	&.icon {
+						    color: $white;
+							font-size: 32px;
+							font-size: 2em;
+						 	margin-bottom: 15px;
+						    text-align: center;
+						    text-shadow: none;
+						    @include max-screen(768px){
+							    background: rgba(255, 255, 255, .05);
+					    	    float: right;
+							    margin-right: 25px;
+							    padding: 10px;
+						    }
+				    	} // End Icon
+
+				    	&.title {
+							color: $white;
+							font-family: $openSans;
+							font-weight: 600;
+							font-size: 36px;
+							font-size: 2.250em;
+							margin-bottom: 10px;
+							text-align: center;
+							text-shadow: 1px 2px 1px rgba(0,0,0,0.50);
+							@include max-screen(768px){
+							    float: right;
+							    font-size: 21px;
+							    font-size: 1.313em;
+							    font-weight: 100;
+							    margin-right: 25px;
+							    padding-top: 15px;
+							}						    		
+				    	} // End Title
+
+				    	&.description {
+				    		color: $white;
+							font-family: OpenSans;
+							font-size: 20px;
+							font-size: 1.250em;
+							letter-spacing: 1.48px;
+							margin-bottom: 25px;
+						    text-align: center;
+							text-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+							@include max-screen(768px){
+								display: none;
+							}						    
+				    	} // End Description
+
+						&.view {
+							box-shadow: none;
+					    	display: block;
+							font-weight: 400;
+	    					margin: 0 auto;
+						    text-align: center;
+						    text-transform: uppercase;
+						    width: 50%; 
+						    @include max-screen(768px){
+						    	display: none;
+						    }
+						} // End View
+
+						@include max-screen(960px){
+							&.title,
+							&.description {
+							    margin-bottom: 10px;
+							}
+							&.description {
+								font-size: 16px;
+								font-size: 1em;
+							}
+						}
+
+						@include max-screen(767px){
+							&.description {
+								display: none;
+							}
+						}
+
+				    } // End Span
+					
+					@include max-screen(960px){
+						a {
+							width: 33%;
+						}
+					}
+
+				} // End Inner
+
+			} // End Caption
+
+			&:hover {
+				img {
+					transform: scale(1.06);
+				}
+				.caption { 
+					opacity: 1;
+					.inner {
+						opacity: 1;
+						@include transform(translateY(-50%));
+					}
+				}
+			} // End Item Hover
+
+		} // End Item
+	} // End Grid Row
+
+} // End Work Grid

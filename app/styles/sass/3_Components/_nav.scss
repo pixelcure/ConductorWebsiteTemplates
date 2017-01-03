@@ -1,0 +1,224 @@
+  //////////////////////////////////////
+ // NAVIGATION ////////////////////////
+//////////////////////////////////////
+
+@keyframes comeUp {
+    from {
+    	opacity: 0;
+    	transform: translateY(100%);
+	}
+	to {
+		transform: translateY(0%);
+    	opacity: 1;
+	}
+}
+
+nav {
+	background: $siteBg;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	@include transform(translate3d(0, -100%, 0));
+	top: 0;
+	transition: .8s ease-in-out;
+	width: 100%;
+	z-index: 900;
+	
+	.inner { position: relative; height: 100%; }
+	
+	.nav-close {
+		cursor: pointer;
+	    color: $white;
+	    font-weight: 100;
+	    font-size: 36px;
+	    height: 50px;
+	    margin: 50px 50px 50px 0;
+	    padding: 10px;
+	    position: absolute;
+	    right: 0;
+	    text-align: center;
+	    top: 50px;
+	    width: 50px;
+	    z-index: 1000;
+	    &:before {
+    	    content: '';
+		    background: white;
+		    height: 50px;
+		    position: absolute;
+		    right: -50px;
+		    top: 0;
+		    transform-origin: right;
+		    transition: 300ms cubic-bezier(0.4, 0, 0.75, 0.64);
+		    width: 0;
+		    z-index: -1;
+	    }
+	    &:hover {
+	    	transition-delay: 300ms;
+			color: $black;
+	    	&:before { width: 100px; }
+	    }
+	    @include max-screen(768px){
+	    	transition: none;
+	    }
+	}
+
+	ul {
+	    left: 50%;
+		position: absolute;
+	    top: 50%;
+	    @include transform(translate(-50%, -50%));
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		width: 100%;
+    	z-index: 900;
+
+
+		li {
+			margin: 0 35px;
+			opacity: 0;
+			transition: .3s ease-in;
+			width: 95%;
+			width: calc(100% - 70px);
+			width: 50%;
+
+			&:before {
+			    background: rgba(255, 255, 255, .05);
+			    border-bottom: 1px solid rgba(255, 255, 255, .05);
+			    content: '';
+			    height: 100%;
+			    left: -25px;
+			    opacity: 0;
+			    position: absolute;
+			    -webkit-transform-origin: left;
+			    transform-origin: left;
+			    transition: 1000ms cubic-bezier(0, 0.77, 0.52, 0.96);
+			    transition-delay: 50ms;
+			    width: 0;
+			    z-index: 0;
+	    	    @include max-screen(768px){
+	    			transition: none;
+	    			content: auto;
+	    			content: initial;
+    			}
+			}
+			&.creators {
+				span {
+					color: $white;
+					cursor: pointer;
+					display: block;
+					font-size: 80px;
+					font-size: 5.5vmin;
+					font-weight: 100;
+					letter-spacing: 0.1em;
+					line-height: 1.5em;
+					outline: none;
+					position: relative;
+					text-align: left;
+					text-decoration: none;
+					transition: 200ms cubic-bezier(0.49,-0.01, 0, 0.12);
+					@include user-select(none);
+					z-index: 5;					
+				}
+			}
+			&:hover {
+				&:before {
+					opacity: 1;
+			    	width: 100%;
+				}
+			}
+
+			&.comeUp {
+				animation-name: comeUp;
+				animation-delay: 175ms;
+				animation-duration: 1100ms;
+				animation-timing-function: cubic-bezier(0.4, 0, 0.75, 0.64);
+				animation-fill-mode: forwards;
+				-webkit-transform-origin: 300px;
+			    @include max-screen(768px){
+					animation: none;
+			    }				
+			}
+
+		    @include max-screen(768px){
+		    	transition: none;
+		    	opacity: 1;
+		    }			
+
+			ul {
+				display: none;
+				animation: none;
+				list-style: none;
+				margin-top: 35px;
+				left: auto;
+				left: initial;
+				padding: 0;
+				position: static;
+				right: auto;
+				right: initial;
+					
+				li {
+					&.droptown-title {
+						color: $white;
+						display: block;
+	    				font-size: 40px;
+	    				font-size: 4.5vmin;
+					}
+					&.show {
+						display: block!important;
+						opacity: 1;
+					}
+				} // End Dropdown Item
+				
+				&.show {
+					display: block;
+					margin-top: 50px;
+				}
+
+			} // End Dropdown
+			
+			a {
+				color: $white;
+				display: block;
+				font-size: 80px;
+				font-size: 5.5vmin;
+				font-weight: 100;
+				letter-spacing: 0.1em;
+				line-height: 1.5em;
+				outline: none;
+				position: relative;
+				text-align: left;
+				text-decoration: none;
+				transition: 200ms cubic-bezier(0.49,-0.01, 0, 0.12);
+				@include user-select(none);
+				z-index: 5;
+
+				&:focus,
+				&:active,
+				&:hover {
+					color: $white;
+					outline: none;
+					padding-left: 25px;
+					text-decoration: none;
+				}// End Hover, Active, Focus
+
+			    @include max-screen(768px){
+			    	transition: none;
+			    	&:hover {
+			    		padding-left: 0;
+			    	}
+			    }				
+			} // End Nav Item Link
+	
+		} // End Li
+
+	} // End Nav Ul
+
+	&.open {
+		background: $menuBg;
+		@include transform(translate3d(0, 0, 0));
+		// transition-delay: .02s;
+		display: block;
+	} // End Menu Open
+
+} // End Nav

@@ -1,0 +1,706 @@
+  /////////////////////////////////////////
+ // Components ///////////////////////////
+/////////////////////////////////////////
+
+// Menu Icon
+.menu-icon {
+	cursor: pointer;
+	height: 25px;
+	padding-top: 1.3px;
+	width: 25px;
+	
+	small {
+		color: $white;
+		display: block;
+		font-size: 13px;
+	    float: left;
+	    height: 100%;
+	    font-weight: 200;
+	    margin: 5px 0 0 -55px;
+	    padding-top: 2px;
+		text-shadow: 1px 1px 1px $black;
+	    text-transform: uppercase;
+	    letter-spacing: .2em;
+		@include user-select(none);
+	    width: 45px;
+	}
+	
+	span {
+	    background: $white;			
+	    display: block;
+		height: 2px;
+		margin-bottom: 7px;
+		position: relative;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+} // Menu Icon
+
+// Scroll Down Animation
+.scroll-down {
+    @include background-image-linear(transparent 20%, rgba(0,0,0,.8) 120%);
+    font-family: $openSans;
+    height: 150px;
+    padding: 30px 25px 25px 25px;
+    text-align: center;
+    @include transform(translateX(0));
+    width: 100%;
+
+    h2 {
+    	color: $black;
+    	display: block;
+    	font-weight: 100;
+    	font-size: .875em;
+    	margin-top: 15px;
+	    text-shadow: 1px 1px 1px rgba(0,0,0, .4);
+    	text-transform: uppercase;
+    	position: relative;
+    	z-index: 100;
+    }
+
+    span.icon {
+    	color: $white;
+	    border: 2px solid #0B3F4D;
+		@include box-shadow(1px 1px 1px $darkShadow);
+	    @include border-radius(360px);
+	    color: $white;
+	    display: inline-block;
+	    padding: 10px;
+	    position: relative;
+	    @include transform(rotate(90deg));
+	    z-index: 400;
+
+	    &:after {
+		    background: #9E9191;
+		    bottom: 4px;
+		    color: rgba(0, 0, 0, 0.4);
+		    height: 6px;
+		    position: absolute;	    	
+		    text-align: center;
+		    width: 1px;
+		    z-index: 200;
+	    }
+
+    } // End Icon
+
+	&:hover {
+		height: 200px;
+		opacity: 0;
+		@include transform(translate(0, 300px));
+		
+		h2 {
+			color: $darkShadow;
+			opacity: 0;
+			@include transform(translateY(100px));
+		}
+
+		span {
+			background: $white;
+			border: 0;
+			font-size: 0;
+			height: 30px;
+			opacity: 0;
+			@include transform(rotate(-180deg));
+			width: 15px;
+			z-index: 100;
+			&:after {
+				content: '|';
+			}
+		}
+
+	} // End Scroll Down Hover
+} // End Scroll Down
+
+// Title Header
+.title-header {
+	height: 135px;
+	overflow: hidden;
+	padding-left: 50px;
+	position: relative;
+
+	@include max-screen(768px){
+		height: 90px;
+	}
+
+	@include max-screen(400px){
+		padding-left: 25px;
+	}
+
+	.left {
+	    height: 45px;
+	    margin: 45px 25px 0 0;
+	    overflow: hidden;
+
+		@include max-screen(768px){
+			margin: 25px 25px 0 0;
+		}
+
+		h1 {
+			color: $black;
+			font-size: 42px;
+			font-size: 2.625em;
+			letter-spacing: 0.07px;
+			line-height: 43px;
+		    margin: 0 auto;
+			text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+
+			@include max-screen(1000px){
+			    font-size: 32px;
+    			font-size: 2em;
+			}
+
+			@include max-screen(767px){
+    			line-height: 35px;
+    			font-size: 36px;
+    			font-size: 2em;
+			}
+
+			@include max-screen(745px){
+				font-size: 19px;
+    			font-size: 1.25em;
+			}
+
+			.first {
+				animation-timing-function: ease-in-out;
+				animation-fill-mode: forwards;
+				animation-delay: 400ms;				
+				animation-duration: 500ms;				
+				animation-name: fadeIn;
+				color: rgba(0, 0, 0, 1);
+				font-family: $openSans;
+				font-weight: 100;
+				opacity: 0;
+				padding-right: 5px;
+				text-decoration: none;
+			}
+			
+			// Homepage Only
+			b.first {
+				font-family: $directorsCut;
+			}
+
+			.page-name {
+				animation-name: fadeIn;
+				animation-timing-function: ease-in-out;
+				animation-duration: 500ms;
+				animation-delay: 1000ms;
+				animation-fill-mode: forwards;
+				color: rgba(0, 0, 0, .7);
+				font-style: normal;
+				opacity: 0;
+				@include max-screen(567px){
+					display: none;
+				}
+			}
+
+			// Homepage Only
+			i.page-name {
+				font-family: $openSans;
+				font-weight: 100;
+			}
+			
+			.page-child {
+				animation-name: fadeIn;
+				animation-timing-function: ease-in-out;
+				animation-duration: 500ms;
+				animation-delay: 1500ms;
+				animation-fill-mode: forwards;
+				color: rgba(0, 0, 0, .5);
+				font-style: normal;
+				opacity: 0;
+				@include max-screen(567px){
+					display: none;
+				}
+			}			
+		}
+
+	} // End Left Title Bar
+
+	.menu-icon {
+		padding-top: 0;
+		width: 50px;
+		height: 50px;
+	    float: none;
+	    position: absolute;
+	    right: 50px;
+	    top: 50px;	
+	    
+	    @include max-screen(768px){
+	    	top: 30px;
+			height: 25px;
+	    }
+
+	    @include max-screen(400px){
+	    	right: 25px;
+	    }
+
+		span {
+			height: 2px;
+			margin-bottom: 15px;		
+			@include max-screen(768px){
+				margin-bottom: 10px;
+			}	
+		}
+		small {
+			font-style: normal;
+			@include max-screen(768px){
+				font-size: 10px;
+    			margin: 0 0 0 -45px;
+			}
+			@include max-screen(400px){
+				display: none;
+			}
+		}
+	}
+
+	.arrow-design {
+	    position: absolute;
+	    top: -20px;
+	    right: 0;		
+	    @include max-screen(768px){
+	    	top: -45px;
+	    	right: -30px;
+	    }
+	    @include max-screen(400px){
+	    	right: -75px;
+	    }
+	}
+
+
+	&.inner-page {
+		border-bottom: 1px solid rgba(0, 0, 0, .05);
+		height: 95px;
+		
+		.left {
+			margin: 25px 25px 0 0;
+			
+			h1 {
+				font-family: $openSans;
+				font-size: 26px;
+				font-size: 1.625em;
+				font-weight: 100;
+				text-transform: uppercase;
+
+				
+				// Conductor Title					
+				.first {
+					color: rgba(0, 0, 0, 1.0);
+					font-family: $directorsCut;
+					padding: 0;
+				}
+
+				// Page Name
+				.page-name {
+					color: rgba(0, 0, 0, .7);
+				}
+				
+				// Child Page Title
+				.page-child {
+					color: rgba(0, 0, 0, .5);
+				}
+
+				.crumb {
+					display: inline-block;
+				    margin-right: 20px;		
+				    position: relative;			
+
+					&:after {
+						content: '/';
+						font-weight: 800;
+						font-family: $openSans;
+						margin-left: 10px;
+						padding-right: 10px;
+						position: absolute;
+					}
+				} // End Breadcrumb
+
+				@include max-screen(567px){
+					.first:after {
+						content: '';
+						margin-right: 0;
+						padding: 0;
+						position: static;
+					}
+				}
+			} // End h1
+
+		
+		} // End Left Page Title
+
+		.arrow-design {
+			top: -40px;
+		} // End Arrow Design Background
+
+		.menu-icon {
+			top: 30px;
+		} // End Menu Icon
+	} // End Inner Page Title
+
+} // End Title Header
+
+
+.logo-track-callout {
+	background: $white;
+	height: 460px;
+    position: relative;
+
+	@include max-screen(767px){
+	    background: $black;
+	    border: 1px solid rgba(0, 0, 0, .9);
+	    margin: 45px;
+	    height: auto;
+	}
+
+	@include max-screen(450px){
+		margin: 0;
+	}
+
+	.track {
+		display: table;
+		float: left;
+	    height: 420px;
+	    padding: 45px 0;
+	    position: relative;
+	    width: 50%;
+	    
+	    @include max-screen(767px){
+	    	display: none;
+	    }
+
+	    svg {
+		    position: absolute;
+		    right: -8px;
+		    top: 43px;
+		    width: 219px;
+	    }
+	    
+	    .pane-holder {
+	    	border-top: 2px solid $black;
+	    	border-bottom: 2px solid $black;		
+		    float: left;
+		    height: 367px;
+		    padding: 50px 0 50px 50px;
+		    width: calc(100% - 209px);   	
+	    } // Pane To Create Logo
+
+	    &.right-pane {
+	    	height: 100%;
+	    	padding: 0;
+
+			.pane-holder {
+			    background: $black;
+			    border: 0;
+			    float: right;
+		        height: 367px;
+			    // height: 460px;
+    			margin-top: 48px;
+    			width: calc(100% - 219px);
+			    // width: calc(100% - 273px);
+			} // end right pane content
+
+			svg {
+    			height: 100%;
+    			left: 0;
+    			top: -1px;
+			}	
+	    } // end right track 
+	}  // end background track
+
+	.outer-content-top {
+	    position: relative;
+	    height: 100%;
+	    width: 100%;
+	    z-index: 100;
+
+		@include max-screen(767px){
+			padding: 50px;
+		}
+
+		.inner-content {
+		    left: 50px;
+		    position: absolute;
+		    top: 50%;
+		    transform: translateY(-50%);		
+		    width: 33%;
+
+			@include max-screen(768px){
+				left: 25px;
+			}
+
+		    @include max-screen(767px){
+			    left: initial;
+	    	    position: static;
+			    transform: translate(0, 0);
+			    top: initial;
+				padding: 0;
+		    }
+
+			p {
+			    color: $black;			
+			    font-size: 26px;
+			    font-size: 1.625em;
+				font-weight: 100;
+			    line-height: 1.5em;
+			    margin-bottom: 40px;
+			    @include max-screen(1220px){
+		    		font-size: 19px;
+    				font-size: 1.2em;
+			    }
+			    @include max-screen(900px){
+		    	    font-size: 16px;
+    				font-size: 1em;
+			    }
+			    @include max-screen(850px){
+		    	    padding-top: 50px;
+					margin-bottom: 25px;
+			    }
+			    @include max-screen(767px){
+			    	color: $white;
+    				font-weight: 200;
+    				padding: 0;
+    				
+    				br {
+    					display: none;
+    				}
+			    }
+			}	
+			small {
+				color: $black;
+				display: block;
+				font-size: 24px;
+				font-size: 1.5em;
+				margin-bottom: 30px;
+			    @include max-screen(1220px){
+		    		font-size: 19px;
+    				font-size: 1.2em;
+			    }				
+				@include max-screen(767px){
+					color: $white;
+				}
+			}	
+			a {
+				font-weight: 600;
+				@include max-screen(767px){
+					background: $white;
+					color: $black;
+    				font-weight: 100;
+				}
+			}
+		    @include max-screen(767px){
+		    	color: $white;
+		    	text-align: center;
+		    	width: 100%;
+			}
+		} // end inner content
+		.callout-sidebar {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+
+			@include max-screen(767px){
+			    margin: 70px auto 0;
+				position: static;
+			    right: auto;
+			    right: initial;
+			    top: auto;
+			    top: initial;
+			    transform: translateY(0);
+			    width: 100%;
+			}
+
+		    ul {
+		    	padding: 0 50px 0 0;
+		    	list-style: none;
+
+				@include max-screen(768px){
+				    padding: 0 25px 0 0;
+				}
+
+				@include max-screen(767px){
+					padding: 0;
+				}	
+
+		    	li {
+		    		margin-bottom: 45px;
+				    text-align: right;
+				    @include max-screen(850px){
+			    	    margin-bottom: 25px;
+    					text-align: right;
+				    }
+				    @include max-screen(767px){
+				    	margin-bottom: 15px;
+				    	text-align: center;
+				    }
+		    		&:last-child {
+		    			margin-bottom: 0;
+		    		}
+		    		span {
+						color: $white;
+						font-size: 36px;
+						font-size: 2.250em;
+						font-weight: 200;
+					    letter-spacing: 2.59px;
+					    line-height: 1.2em;
+						text-transform: uppercase;
+						@include max-screen(1220px){
+							font-size: 24px;
+						    font-size: 1.5em;
+						}
+						@include max-screen(900px){
+						    font-size: 21px;
+    						font-size: 1.3em;
+						}
+		    		}
+		    	} // end list item
+			} // end list
+	    } // end list of services		
+	} // end outer content top
+
+	.gradient {
+		bottom: 0;
+		height: 80%;
+		opacity: .8;
+		position: absolute;
+		width: 100%;
+		z-index: 50;
+	}
+
+} // end services
+
+// Contact Angled Callout
+.angled-callout {
+	height: 640px;
+	position: relative;
+	overflow: hidden;
+
+	@include max-screen(660px){
+		background: $black;
+	}
+
+	.backdrop {
+		height: 620px;
+    	position: absolute;
+    	right: 0;
+		transform: translateY(-18%);
+    	width: 100%;
+    	@include max-screen(660px){
+    		display: none;
+    	}
+    	svg polygon {
+			fill: rgba(0, 0, 0, .4);
+    	}
+	} // end backdrop
+	
+	.inner-content {
+		height: 100%;
+	    left: 0;
+	    position: absolute;
+	    top: 0;
+	    width: 100%;
+
+	    h1, h2 {
+	    	color: $textColor;
+	    	font-size: 46px;
+	    	font-size: 2.875em;
+	    	font-weight: 200;
+	    	margin: 100px 0 10px 0;
+	    	text-align: center;
+	    	letter-spacing: 2px;
+	    	@include max-screen(767px){
+	    		padding: 0 25px;
+	    		margin-top: 80px;
+	    	}
+	    	@include max-screen(660px){
+	    		color: $white;
+	    	}
+	    }
+	    h2 {
+	    	color: $cBlue;
+			margin: 0 0 60px 0;
+	    	@include max-screen(660px){
+	    		color: $white;
+	    		margin-bottom: 0;
+	    	}			
+	    }
+
+	} // end inner content
+
+	.address {
+		background: $black;
+		margin: 0 auto;
+		padding: 45px;
+		width: 640px;
+
+		@include max-screen(660px){
+			width: 100%;
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+
+			li {
+				color: $white;
+				font-size: 18px;
+				font-size: 1.125em;
+				font-weight: 100;
+				list-style: none;
+				letter-spacing: 0.05em;
+				margin-bottom: 15px;
+				text-align: center;
+				&.phone {
+					font-weight: bold;
+				}
+				a {
+					margin-top: 25px;
+					color: $white;
+					letter-spacing: initial;
+					&.button {
+						border: 1px solid $white;
+					}
+					&.button:hover {
+						color: $black;
+					}
+				}
+				&:last-child {
+					margin-top: 25px;
+					a {
+						font-weight: 800;
+					}
+				}
+			}
+		} // end address list
+	} // end address container
+
+} // End Angled Callout
+
+// Parallax
+.parallax {
+    background: url(/../../images/home-river.jpg) 0 0 no-repeat;
+    background-size: cover;
+	box-shadow: 0 13px 10px rgba(0, 0, 0, .6);
+	height: 725px;
+	position: relative;
+	z-index: 1;
+	@include max-screen(1320px){
+	    height: 525px;
+	}
+	@include max-screen(960px){
+	    height: 425px;
+	}
+}
+
+// Map
+.office-map {
+	border-bottom: 1px solid $textColor;
+	box-shadow: 0 5px 25px rgba(0, 0, 0, 0.35);
+	height: 380px;
+	position: relative;
+
+	.map-container {
+		height: inherit;
+	}
+}

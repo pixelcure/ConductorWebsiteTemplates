@@ -1,0 +1,44 @@
+  /////////////////////////////////////////
+ // Clients //////////////////////////////
+/////////////////////////////////////////
+
+.clients {
+
+	.clients-grid {
+		ul {
+			@extend  .clean;
+
+			li {
+				background-image: radial-gradient(50% 45%, rgba(81, 84, 86, 0.45) 50%, rgba(65, 72, 79, 0.33) 100%);
+				border: 1px solid rgba(53, 53, 53, 0.15);
+				height: 240px;
+				position: relative;
+				@extend .left;
+				transition: .3s;
+				width: 25%;
+
+				// TEMP
+				h1 {
+				    text-align: center;
+				    color: #FFF;
+				    text-shadow: 1px 1px 1px #000;
+				    font-weight: 800;
+				    position: absolute;
+				    top: 50%;
+				    left: 50%;
+				    transform: translate(-50%, -50%);
+				    margin: 0;
+				}
+
+				@include max-screen(960px){
+					width: 50%;
+				}
+				@include max-screen(767px){
+					width: 100%;
+				}
+
+			} // End Client
+		} // End Clients List
+	} // End Clients Grid
+
+} // End Clients

@@ -1,0 +1,38 @@
+  /////////////////////////////////////////
+ // Creators /////////////////////////////
+/////////////////////////////////////////
+
+.creators {
+
+	.video-player .video-controls .controls.right {
+	    @include max-screen(767px){
+	    	top: 15px;
+	    }
+	}	
+
+	@include max-screen(768px){
+		.middle {
+			.tighten {
+				padding-top: 0;
+			}
+		}
+	}
+
+	.work-grid {
+		&.no-margin {
+			margin-bottom: 0;
+		}
+		@include max-screen(767px){
+			margin-bottom: 45px;
+			
+			&.no-margin {
+				margin-bottom: 0;
+			}
+
+			.work-type {
+				text-align: center;
+			}
+		}
+	} // End Work Grid
+
+} // End Creators

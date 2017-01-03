@@ -1,0 +1,42 @@
+  ////////////////////////////////
+ // FORM ELEMENTS ///////////////
+////////////////////////////////
+
+@import './_typography.scss';
+@import '../2_Pieces/_buttons.scss';
+
+fieldset {
+	border: 0;
+	margin: 0 0 25px 0;
+	padding: 0;
+
+	input[type="text"],textarea {
+    	background: transparent;
+		border: 1px solid $white;
+	    resize: none;
+        padding: 15px 25px;
+        outline: none;
+	    width: 75%;
+	    @include max-screen(768px){
+	    	padding: 15px;
+	    }
+	}
+		
+	input[type="submit"] {
+		background: $white!important;
+		border: 1px solid $white;
+		color: $black;
+		font-size: 16px;
+		font-size: 1em;
+	    padding: 10px 15px;
+		outline: none;
+		min-width: 100px;
+		margin-bottom: 0;
+		&:hover {
+			background: $black!important;
+			border-color: $white!important;
+			color: $white!important;
+		}
+	}
+
+} // End Fieldset

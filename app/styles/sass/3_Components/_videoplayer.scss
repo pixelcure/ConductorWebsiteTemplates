@@ -1,0 +1,234 @@
+  ///////////////////////////////////////////
+ // VIDEO PLAYER ///////////////////////////
+///////////////////////////////////////////
+
+.video-player {
+
+	.video-container {
+		// max-height: 545px;
+		position: relative;
+		width: 100%;
+
+		.play-btn {
+		    background: rgba(0, 0, 0, .5);
+		    border-radius: 360px;
+		    cursor: pointer;
+		    height: 50px;
+		    left: 50%;
+		    position: absolute;
+		    top: 50%;
+	        transform: translate(-50%,-50%);
+		    transition: .3s ease-in;
+		    width: 50px;
+		    z-index: 1000;
+
+			&:before {
+			    border-radius: 360px;
+			    border: 5px solid rgba(0, 0, 0, .5);
+				content: '';
+			    height: 100px;
+			    left: -50%;
+			    position: absolute;
+			    top: -50%;
+			    width: 100px;
+			}
+
+	    	.play {
+			    display: block;
+			    border-top: 15px solid transparent;
+			    border-left: 25px solid rgba(255, 255, 255, 0.9);
+			    border-right: 15px solid transparent;
+			    border-bottom: 15px solid transparent;
+			    height: 0px;
+			    margin: 10px 15px;
+	    	} // End Triangle
+
+		} // End Play Button
+
+		video {
+			height: auto;
+			width: 100%;
+		}
+
+	} // End Video Container
+
+	.video-inner {
+		animation: 400ms fadeIn ease-in;
+		// @include box-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+		position: relative;
+		overflow: hidden;
+
+	    @include max-screen(769px){
+	    	animation: none;
+	    }
+
+		// Carousel
+		.video-carousel {
+			list-style-type: none;
+			padding: 0;
+			
+			.slick-arrow { display: none!important; }
+			
+			// Carousel Item
+			.item {
+				outline: none;
+			} // End Carousel Item
+
+		} // End Video Carousel
+
+		.video-callout {
+			animation: 1s fadeDown linear;
+			animation-delay: 400ms;
+			animation-fill-mode: forwards;
+			opacity: 0;
+		    bottom: 30px;
+			position: absolute;
+		    right: 50px;
+		    width: 33%;			
+		    z-index: 100;
+
+		    &:before {
+			    background: rgba(255, 255, 255, .3);
+	    	    content: '';
+			    height: 1500px;
+			    top: -200px;
+			    left: -135px;
+			    position: absolute;
+			    transform: rotate(45deg);
+			    width: 1900px;
+			    z-index: 100;
+		    }
+		    h2 {
+		    	color: rgba(0, 0, 0, .5);
+		    	font-size: 36px;
+		    	font-size: 2.250em;
+		    	font-family: $openSans;
+		    	font-weight: 600;
+				letter-spacing: 1.15px;
+		    	line-height: 1.5em;
+		    	margin-bottom: 25px;
+		    	text-align: right;
+		    	position: relative;
+		    	z-index: 120;
+		    	span {
+		    		color: $black;
+		    	}
+		    	@include max-screen(1050px){
+		    		font-size: 24px;
+		    	}
+		    	@include max-screen(815px){
+		    		font-size: 21px;
+		    	}
+		    }
+		    a {
+				margin-right: 5px;
+				position: relative;
+				z-index: 120;
+		    }
+			
+			@include max-screen(767px){
+				display: none;
+			}
+
+		} // End Hero Callout
+	} // End Hero Inner
+
+	.video-controls {
+		overflow: hidden;
+		padding: 35px 50px 0;
+
+		.slick-dots {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			li {
+				height: 10px;
+				list-style: none;
+				margin-right: 15px;
+				outline: none;
+				position: relative;
+				width: 10px;
+
+				button {
+				    background: rgba(0, 0, 0, 0.5);
+				    border: none;
+				    font-size: 0;
+				    height: 10px;
+				    left: 0px;
+					margin: 0;
+					outline: none;
+				 	position: absolute;
+				    padding: 0;
+				 	top: 0;
+				    width: 10px;
+				    &:hover {
+				    	background: $black;
+				    }
+
+				} // End Indicator
+
+			    &.slick-active,
+			    &:hover {
+			    	background: $black;
+			    	outline: none;
+			    }
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		} // end slide list
+
+		.controls {
+			display: flex;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			top: -5px;
+			
+			li {
+				color: $cBlue;
+				font-size: 24px;
+				font-size: 1.5em;
+				list-style: none;
+				margin-right: 15px;
+				&:last-child { margin-right: 0; }
+				
+				a {
+					color: $cBlue;
+					display: block;
+					font-family: $icoMoon;
+					
+					&:focus,
+					&:active,
+					&:hover {
+						opacity: .5;
+						outline: none;
+						text-decoration: none;
+					}
+				} // End Control
+			} // End Li Control Container
+
+		} // end controls
+
+		@include max-screen(767px){
+		    height: 75px;
+		    padding: 5px;
+
+			.controls {
+			    float: none;
+			    margin: 0 auto;
+			    position: relative;
+			    top: 25px;			
+			    width: 98px;
+			}
+			.slick-dots {
+			    justify-content: center;
+			    margin-top: -20px;
+			}
+
+		}
+
+	} // end video controls
+
+} // end video player

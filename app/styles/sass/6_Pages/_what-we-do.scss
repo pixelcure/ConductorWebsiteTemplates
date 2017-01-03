@@ -1,0 +1,378 @@
+  /////////////////////////////////////////
+ // What We Do ///////////////////////////
+/////////////////////////////////////////
+
+.what-we-do {
+	.panel-table {
+		background: $black;
+		overflow: hidden;
+		padding: 75px 110px;
+
+		@include max-screen(825px){
+			padding: 75px;
+		}
+
+		@include max-screen(768px){
+			padding: 75px 45px;
+		}
+
+		.bottom-message,
+		.top-message {
+			margin-bottom: 70px;
+			width: 100%;
+
+			strong {
+			    color: rgba(275, 275, 275, 1);
+			    display: block;
+			    font-weight: 100;
+				font-size: 40px;
+				font-size: 2.250em;
+			    line-height: 1.3em;
+			    text-transform: uppercase;
+			    span {
+			    	font-weight: 800;
+			    }
+			} // End Strong
+
+			em {
+				color: rgba(275, 275, 275, .5);
+				display: block;
+				font-weight: 100;
+				font-size: 2.250px;
+				font-size: 2.250em;
+				line-height: 1.3em;
+			}
+
+			@include max-screen(985px){
+				text-align: center;
+				margin: 0 auto 50px;
+				width: 100%;				
+			}
+
+			@include max-screen(560px){
+				width: 75%;
+			}
+
+			@include max-screen(380px){
+				width: 100%;
+			}
+
+		} // End Message
+
+		.bottom-message {
+			margin: 70px 0 0 0;
+			float: left;
+			
+			strong {
+				font-size: 36px;
+				font-size: 2.250em;
+			    font-weight: 400;				
+			    text-align: center;
+			    text-transform: initial;
+			}
+
+			.button {
+				background: $white;
+				border: 1px solid transparent;
+				color: $black;
+				display: block;
+				font-size: 18px;
+				height: 50px;
+				margin: 25px auto 0;
+				padding-top: 13px;
+				text-align: center;
+				width: 33%;
+				&:hover,
+				&:active,
+				&:focus {
+					background: $black;
+					border-color: $white;
+					color: $white;
+				}
+
+				@include max-screen(665px){
+					width: 50%;
+				}
+
+				@include max-screen(475px){
+					width: 100%;
+				}
+			}
+
+			@include max-screen(767px){
+			    float: none;
+			    text-align: center;
+			    width: 100%;		    
+			}
+
+		} // End Bottom Message Specific
+		
+		.cell {
+			display: table;
+			float: left;
+			padding: 0 50px;
+			width: 50%;
+
+			&.padding-top {
+				padding-top: 50px;
+			}
+
+			&:nth-child(odd){
+				padding-right: 0;
+			}
+
+			&:nth-child(even) {
+				padding-left: 0;
+			}
+
+			@include max-screen(845px){
+				padding: 0 45px;
+	
+				&.padding-top {
+					padding-top: 45px;
+				}
+
+				&:nth-child(odd){
+					padding-right: 0;
+				}
+
+				&:nth-child(even) {
+					padding-left: 0;
+				}				
+			}
+
+			@include max-screen(985px){
+				display: block;
+				float: none;
+				margin-bottom: 25px;
+				padding: 0;
+				text-align: center;
+				width: 100%;
+				&.padding-top {
+					padding-top: 0;
+				}
+			}
+
+			h3 {
+				color: rgba(255, 255, 255, .7);
+				font-size: 36px;
+				font-size: 2.250em;
+				margin: 0 0 25px 0;
+				.icon {
+				    display: block;
+				    float: left;
+				    margin-right: 20px;
+				    width: 35px;
+				    img { vertical-align: sub; }
+				    @include max-screen(985px){
+				    	float: none;
+				    	margin: 0 auto 25px;
+				    }
+				}
+			} // End Category Header
+
+			p {
+				color: rgba(255, 255, 255, .3);
+				font-size: 18px;
+				font-size: 1.125em;
+				font-weight: 100!important;
+				line-height: 1.8em;
+			} // End Paragraph Brief
+		} // End Cell	
+
+	} // End Panel Table
+
+	.work-grid {
+		margin-bottom: 0;
+	} // End Work Grid What We Do
+
+	.gateway {
+		min-height: 365px;
+		max-height: 550px;
+		position: relative;
+		z-index: 0;
+		@include max-screen(768px){
+			min-height: auto;
+			min-height: initial;
+			height: 250px;
+		}
+		@include max-screen(767px){
+	    	height: auto;
+	    	height: initial;
+	    	padding: 45px;	
+	    	min-height: auto;
+	    	min-height: initial;
+	    	max-height: auto;
+	    	max-height: initial;		
+		}
+
+		svg {
+		    position: absolute;
+		    width: 100%;
+		    margin-left: 50px;
+		    max-width: 1200px;
+		    left: 50.6%;
+		    transform: translate(-50%, -50%);
+		    width: 100%;
+		    @include max-screen(1120px){
+				top: 30px;
+		    }
+		    @include max-screen(1090px){
+		    	left: 51.3%;
+		    }
+		    @include max-screen(1000px){
+				top: -10px;
+				left: 51.1%;
+    			width: 1500px;
+		    }
+
+		    @include max-screen(768px){
+		    	display: none;
+		    }
+		} // End Triangle SVG
+
+		.inner.gateway {
+		    position: absolute;
+		    width: 33%;
+		    text-align: center;
+		    left: 50%;
+		    top: 50px;
+		    transform: translateX(-50%);
+		    z-index: 300;	
+
+		    h2 {
+				font-size: 36px;
+				font-size: 2.250em;
+		    	margin-top: 0;
+		    }
+		    
+		    p {
+				@include vw(32px);
+		    }
+
+			@include max-screen(960px){
+				width: 66%;
+			}
+
+		    @include max-screen(767px){
+		    	background: $black;
+		    	height: auto;
+		    	height: initial;
+		    	min-height: auto;
+		    	min-height: initial;
+		    	max-height: auto;
+		    	max-height: initial;
+		    	padding: 45px;
+		    	position: static;
+				top: auto;
+		    	top: initial;
+		    	transform: translateX(0);
+		    	width: 100%;
+
+		    	h2 {
+		    		color: $white;
+		    	}
+		    	p {
+		    		color: rgba(255, 255, 255, .7);
+		    	}
+		    }
+			@include max-screen(320px){
+				h2 {
+					font-size: 16px;
+					font-size: 1em;
+				}
+			}
+		} // End Inner Gateway
+
+	} // End Gateway
+
+	.who-we-are {
+
+		.panes {
+			background: $black;
+			.pane {
+				&.image {
+					background: url(../../images/placeholders/placeholder.jpg) no-repeat top center;
+    				background-size: cover;
+    				@include max-screen(960px){
+    					height: 420px;
+    				}					
+				}
+				&.bio-text {
+					padding: 135px 50px 0;
+					
+					@include max-screen(768px){
+						padding-bottom: 50px;
+					}
+
+					@include max-screen(960px){
+						padding-top: 25px;
+					}
+					@include max-screen(767px){
+						padding-bottom: 100px;
+					}
+
+					h3 {
+						color: rgba(255, 255, 255, .7);
+						font-size: 36px;
+						font-size: 2.250em;
+						margin-bottom: 50px;
+						@include max-screen(960px){
+							margin-bottom: 35px;
+						}
+					} // End Category Header
+
+					p {
+						color: rgba(255, 255, 255, .5);
+						font-weight: 100;
+						margin-bottom: 25px;
+						line-height: 1.8em;
+						@include max-screen(960px){
+							margin-bottom: 15px;
+							line-height: 1.5em;
+						}
+					} // End Paragraph Brief
+
+					a.cta-link {
+						color: $white;
+						font-weight: 400;
+						text-decoration: none;
+						span {
+							color: rgba(255, 255, 255, .7);
+							font-weight: 100;
+						}
+					}
+				} // End Bio Text
+			} // End Pane
+		} // End Panes
+	} // End Who We Are
+
+	.triangle-gradient {
+		background: $black;
+		height: 290px;
+		position: relative;
+		z-index: 50;
+		
+		@include max-screen(767px){
+			display: none;
+		}
+
+		svg {
+		    height: 300px;			
+		    position: absolute;
+		    width: 100%;
+		    z-index: 50;
+		}
+		.gradient {
+		    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.5) 74%);
+		    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.5) 74%);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.1) 36%, rgba(0, 0, 0, 0.5) 74%);
+		   	position: absolute;
+		   	left: 0;
+		   	top: 0;
+		   	width: 100%;
+		   	z-index: 100;
+		} // End Gradient
+	}
+
+} // End What We Do

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.2 (29753) - http://www.bohemiancoding.com/sketch -->
+    <title>Video-Pause</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pause-video" fill="#2CBBF7">
+            <g id="Homepage">
+                <g id="Desktop-HD">
+                    <g id="Hero">
+                        <g id="Teaser-Controls">
+                            <g id="Video-Controls" transform="translate(0.500000, 0.000000)">
+                                <g id="Video-Control---Pause">
+                                    <g id="Video-Pause">
+                                        <rect id="Rectangle-21" x="0" y="0" width="5.38461538" height="15"></rect>
+                                        <rect id="Rectangle-21-Copy" x="8.61538462" y="0" width="5.38461538" height="15"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

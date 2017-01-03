@@ -1,0 +1,14 @@
+  ////////////////////////////////
+ // TABLES //////////////////////
+////////////////////////////////
+
+.table,
+.panel-table {
+	display: table;
+	width: 100%;
+	
+	.cell,
+	.panel-cell{
+		display: table-cell;
+	}
+}

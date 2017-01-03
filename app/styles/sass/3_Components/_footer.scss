@@ -1,0 +1,181 @@
+  ////////////////////////////////
+ // FOOTER //////////////////////
+////////////////////////////////
+
+footer {
+	background: $footerBg;
+	border-top: 1px solid rgba(44, 187, 247, 0.15);
+	overflow: hidden;
+	padding: 25px 0 50px;
+
+	.footer-inner {
+		display: table;
+		margin: 0 auto;
+		padding: 0 45px;
+		width: 100%;
+		
+		.company-info {
+
+			.site-title {
+				color: $white;
+				font-family: $directorsCut;
+				margin-top: 0;
+				text-transform: uppercase;
+				vertical-align: middle;
+			} // End Site Title
+			
+
+			span {
+				color: rgba(255, 255, 255, .5);
+				display: block;
+				font-size: 16px;
+				font-size: 1em;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+
+				@include max-screen(850px){
+					font-size: 14px;
+					font-size: 0.875em;
+				}
+
+				b {
+					color: $white;
+					padding: 0 5px;
+					@include max-screen(1070px){
+						display: none;
+					}
+				}
+				&.copyright {
+					margin: 0;
+				}
+				a { 
+					color: rgba(255, 255, 255, .5); 
+					@include max-screen(1070px){
+						display: block;
+						margin: 10px 0 0;
+					}
+				} // Phone Number Link
+			} // End Address & Copyright
+			
+			@include max-screen(767px){
+				border-bottom: 1px solid rgba(255, 255, 255, .3);
+				margin-bottom: 25px;
+				padding-bottom: 25px;
+				text-align: center;
+
+				a {
+    				margin: 15px;
+				}
+			}
+
+		} // End Company Info
+		
+		.footer-nav {
+			color: $white;
+			display: table-cell;
+			font-size: 16px;
+			font-size: 1em;
+			font-family: $openSans;
+			overflow: hidden;
+			vertical-align: top;
+			padding-top: 14px;
+
+			@include max-screen(850px){
+				font-size: 14px;
+				font-size: 0.875em;
+			}			
+
+			@include max-screen(767px){
+				display: block;
+				margin: 0 auto;
+				padding-top: 0;
+				width: 90%;
+			}
+
+			// @include max-screen()
+			ul.social-media {
+				padding: 0 0 0 20px;
+				float: right;
+
+				@include max-screen(767px){
+				    float: none;
+				    margin: 0 auto 25px;
+				    padding: 0;
+				    width: 75px;
+				}
+
+				li {
+					display: table-cell;
+					font-size: 18px;
+					font-size: 1.125em;
+					list-style: none;
+					padding-right: 10px;
+
+					a {
+						color: $white;
+						&:hover {
+							text-decoration: none;
+						}
+					}
+
+					@include max-screen(767px){
+
+					}
+				}
+			} // End Social Media
+
+			ul.menu {
+				display: table;
+				float: right;
+				padding: 0;
+
+				@include max-screen(767px){
+					display: block;
+					float: none;
+					width: 100%;
+				}
+
+				li {
+					display: table-cell;
+					color: $white;
+					list-style: none;
+					padding-right: 10px;
+					&:after {
+						content: '|';
+						color: $white;
+						padding-left: 10px;
+					}
+					&:last-child { 
+						padding-right: 0; 
+						&:after { content: ''; }
+					}
+
+					@include max-screen(767px){
+						display: table;
+						margin-bottom: 15px;
+						padding: 0;
+						text-align: center;
+						width: 100%;
+						&:after {
+							display: none;
+						}
+					}
+
+					a {
+						color: $white;
+						font-weight: 100;
+						text-transform: uppercase;
+						transition: .3s ease-in-out;
+						@include max-screen(767px){
+							display: block;
+							text-align: center;
+							width: 100%;
+						}
+					}
+				} // End Nav Item
+			} // End Nav List
+
+		} // End Footer nav
+
+	} // End Footer Inner
+} // End Footer

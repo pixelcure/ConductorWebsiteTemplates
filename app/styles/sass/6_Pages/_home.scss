@@ -1,0 +1,177 @@
+  ////////////////////////////////
+ // HOME ////////////////////////
+////////////////////////////////
+
+@keyframes scrollDown {
+	0% {
+		transform: translateY(-10px);
+		margin-top: 15px;
+	}
+	100% {
+		transform: translateY(0px);
+		margin-top: 0px;
+	}
+}
+
+.home {
+	
+	.work-grid {
+		margin-bottom: 0;
+	}
+
+	.see-more-work {
+		min-height: 320px;
+		overflow: visible;
+		position: relative;
+		z-index: 50;
+
+		@include max-screen(960px){
+			min-height: 200px;
+		}
+
+		.callouts {
+			display: table;
+			position: relative;
+			width: 100%;
+			z-index: 10;
+
+			.item {
+				display: table-cell;
+				width: 33%;
+				a {
+    				display: block;
+    				@include font-size(16px);
+    				margin: 0 auto;
+    				text-align: center;
+					width: 175px;
+				}
+			} // End Item
+
+			.scroll-callout {
+				
+				.backdrop {
+				    left: 50%;
+				    position: absolute;
+			        transform: translate(-49.5%, -80px);
+				    width: 350px;
+				    @include max-screen(960px){
+			    	    transform: translate(-49.5%, -90px);
+				    	width: 250px;
+				    }
+				    @include max-screen(767px){
+				    	transform: translate(-49.5%, -80px);
+    					width: 250px;
+				    }
+				} // end backdrop
+
+				.content {
+				    padding-top: 120px;
+				    position: relative;
+				    top: -45px;
+					
+					@include max-screen(960px){
+						padding-top: 50px;
+					}
+
+					@include max-screen(767px){
+					    padding-top: 75px;
+					}
+
+					span {
+						display: block;
+						text-align: center;
+						&:nth-child(1) {
+							color: $black;
+							@include vw(18px);
+							font-family: $openSans;
+							font-weight: 100;
+							padding-bottom: 5px;
+							@include max-screen(767px){
+								font-size: 18px;
+							}
+						}
+						&:nth-child(2) {
+							color: $white;
+							@include vw(26px);
+							font-family: $directorsCut;
+							letter-spacing: 2.5px;
+							padding-bottom: 30px;
+							@include max-screen(767px){
+								font-size: 26px;
+							}
+						}
+						
+					} // end content spans
+
+					a {
+						// animation-name: scrollDown;
+						// animation-timing-function: cubic-bezier(0.16, -1.65, 1, 2.68);
+						// animation-duration: 2300ms;
+						// animation-fill-mode: forward;
+						// animation-iteration-count: 1500;
+    					border: 1px solid black;
+    					@include border-radius(360px);
+    					height: 48px;
+    					transition: .3s;
+						width: 48px;
+
+						@include max-screen(767px){
+							animation: none;
+						}
+
+						.icon {
+							color: $white;
+							display: block;
+							font-family: $icoMoon;
+							@include font-size(26px);
+							padding-top: 11px;
+							text-align: center;
+							transition: .3s;
+						}
+						&:hover {
+							border-color: $white;
+							text-decoration: none;
+
+							.icon {
+								color: $black;
+							}
+						}
+					}
+				} // end content
+
+
+			} // end scroll callout
+
+			@include max-screen(767px){
+				height: 380px;
+				display: block;
+			    margin: 0 auto;		
+			    position: relative;
+    			top: 240px;		
+
+				.item {
+				    display: block;
+				    width: 175px;
+				    margin: 0 auto 25px;
+					&.scroll-callout {
+					    left: 50%;
+					    margin: 0;
+					    position: absolute;
+					    top: -240px;
+					    transform: translateX(-50%);
+					}
+				} // End Item
+			} // End 767px breakpoint
+
+		} // end callouts
+		.background-gradient {
+			@extend .gradient;
+			left: 0;
+			position: absolute;
+			top: 0;
+			z-index: 5;
+			width: 100%;
+		}
+	} // end see work
+
+} // End Home

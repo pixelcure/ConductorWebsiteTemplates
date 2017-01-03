@@ -1,0 +1,27 @@
+{
+  "name": "Conductor Productions",
+  "description": "Portfolio & Services Website",
+  "main": "index.html",
+  "authors": [
+    "PixelCure Interactive"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "video production",
+    "boston",
+    "video editing",
+    "graphic design"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "modernizr": "~2.6.2",
+  }
+}
