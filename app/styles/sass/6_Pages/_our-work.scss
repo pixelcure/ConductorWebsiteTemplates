@@ -20,6 +20,22 @@
 		    .inner {
 		    	h2 {
     				margin: 0;
+    				@include max-screen(768px){
+    					font-size: 23px;
+    					font-size: 1.438em;
+    				}
+    				@include max-screen(767px){
+
+    					font-size: 21px;
+    					font-size: 1.313em;
+    					span {
+    						display: block;
+    					}
+    				}
+		    	}
+		    	em {
+	    		    display: block;
+    				margin-top: 35px;
 		    	}
 		    } // End Inner
 

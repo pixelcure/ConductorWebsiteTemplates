@@ -11,7 +11,7 @@ export default class {
 
 		this.toggleWorkItem = this.toggleWorkItem.bind(this);
 	
-		if(document.getElementById('workGrid') && document.getElementById('workItemInfo')){
+		if(document.getElementById('workGrid') || document.getElementById('workGrid') && document.getElementById('workItemInfo')){
 
 			// Work Item Info Container
 			this.infoContainer = document.getElementById('workItemInfo');

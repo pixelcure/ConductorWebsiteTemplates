@@ -10,6 +10,9 @@ export default class {
 		// Nav Menu Trigger
 		this.menuTrigger = menuTrigger;
 
+		// Scroll Height
+		this.scrollHeight = null;
+
 		// Nav Items
 		this.navItems = document.querySelectorAll('nav ul li');
 
@@ -49,6 +52,7 @@ export default class {
 
 	// On Menu Open
 	menuOpen (e) {
+
 		// remove tranaslate fast 
 		$('main').removeClass('transition-fast');
 		// add open class, show nav
@@ -57,16 +61,22 @@ export default class {
 		$(document.body).addClass('with-nav-open');	
 		// default menu icon
 		$( this.menuTrigger ).addClass('open');
-
+		
 		// Add Animation To "Float" Items Up
-		this.navItems.forEach(function(key){
-			return !key.classList.contains('dropdown-item') ? key.classList.add('comeUp') : '';
-		});
+		for(let x = 0; x < this.navItems.length; ++x){
+			if(!this.navItems[x].classList.contains('dropdown-item')){
+				this.navItems[x].classList.add('comeUp');
+			}
+		}
 
 	};
 
 	// On Menu Close
 	menuClose (e) {
+
+		// Scroll Back to position
+		window.scrollTo(0,this.scrollHeight);
+
 		// default menu icon
 		$( this.menuTrigger ).removeClass('open');
 		// Transition Fast
@@ -76,10 +86,11 @@ export default class {
 		// remove open class, hide nav
 		$( this.nav ).removeClass('open');
 
+
 		// Remove Animation To "Float" Items Up
-		this.navItems.forEach(function(key){
-			return !key.classList.contains('dropdown-item') ? key.classList.remove('comeUp') : '';
-		});
+		for(let x = 0; x < this.navItems.length; ++x){
+			this.navItems[x].classList.remove('comeUp');
+		}
 	};
 
 	// Directors Toggle
@@ -91,13 +102,21 @@ export default class {
 	// Menu Toggle
 	menuToggle (e) {
 		if( $( this.nav ).hasClass('open') ){
-			// Menu Close
+			// Now close menu
 			this.menuClose();
 
 		} else {
-			// Menu Open
+
+			// Capture current scroll position
+			this.scrollHeight = window.pageYOffset;
+			
+			// Scroll to top of page
+			window.scrollTo(0,0);
+			
+			// Now Open Menu
 			this.menuOpen();
-		}
+
+		};
 	};
 };
 

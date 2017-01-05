@@ -12813,7 +12813,6 @@ footer .footer-inner .footer-nav ul.menu li a {
   box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.5);
   height: 45px;
   margin: 0 auto;
-  overflow: hidden;
   position: fixed;
   opacity: 1;
   transition: .5s;
@@ -12861,12 +12860,12 @@ footer .footer-inner .footer-nav ul.menu li a {
   position: relative;
 }
 /* line 17, ../sass/3_Components/_hero.scss */
-.hero.full-bleed-image.contact, .hero.full-bleed-image.clients {
+.hero.full-bleed-image.what-we-do, .hero.full-bleed-image.contact, .hero.full-bleed-image.clients {
   height: 320px;
 }
 @media screen and (max-width: 485px) {
   /* line 17, ../sass/3_Components/_hero.scss */
-  .hero.full-bleed-image.contact, .hero.full-bleed-image.clients {
+  .hero.full-bleed-image.what-we-do, .hero.full-bleed-image.contact, .hero.full-bleed-image.clients {
     height: auto;
     height: initial;
   }
@@ -14304,30 +14303,53 @@ body.with-nav-open main {
 .our-work .middle.work-intro .inner h2 {
   margin: 0;
 }
+@media screen and (max-width: 768px) {
+  /* line 21, ../sass/6_Pages/_our-work.scss */
+  .our-work .middle.work-intro .inner h2 {
+    font-size: 23px;
+    font-size: 1.438em;
+  }
+}
+@media screen and (max-width: 767px) {
+  /* line 21, ../sass/6_Pages/_our-work.scss */
+  .our-work .middle.work-intro .inner h2 {
+    font-size: 21px;
+    font-size: 1.313em;
+  }
+  /* line 31, ../sass/6_Pages/_our-work.scss */
+  .our-work .middle.work-intro .inner h2 span {
+    display: block;
+  }
+}
+/* line 36, ../sass/6_Pages/_our-work.scss */
+.our-work .middle.work-intro .inner em {
+  display: block;
+  margin-top: 35px;
+}
 @media screen and (max-width: 767px) {
   /* line 15, ../sass/6_Pages/_our-work.scss */
   .our-work .middle.work-intro {
     text-align: center;
   }
 }
-/* line 34, ../sass/6_Pages/_our-work.scss */
+/* line 50, ../sass/6_Pages/_our-work.scss */
 .our-work .categories {
   overflow: hidden;
   margin-top: 5px;
 }
 @media screen and (max-width: 768px) {
-  /* line 34, ../sass/6_Pages/_our-work.scss */
+  /* line 50, ../sass/6_Pages/_our-work.scss */
   .our-work .categories {
     width: 80%;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 34, ../sass/6_Pages/_our-work.scss */
+  /* line 50, ../sass/6_Pages/_our-work.scss */
   .our-work .categories {
     width: 100%;
   }
 }
-/* line 46, ../sass/6_Pages/_our-work.scss */
+/* line 62, ../sass/6_Pages/_our-work.scss */
 .our-work .categories li {
   cursor: pointer;
   display: table;
@@ -14336,18 +14358,18 @@ body.with-nav-open main {
   font-size: 1em;
   margin: 15px 15px 0 0;
 }
-/* line 54, ../sass/6_Pages/_our-work.scss */
+/* line 70, ../sass/6_Pages/_our-work.scss */
 .our-work .categories li:last-child {
   margin-right: 0;
 }
 @media screen and (max-width: 960px) {
-  /* line 46, ../sass/6_Pages/_our-work.scss */
+  /* line 62, ../sass/6_Pages/_our-work.scss */
   .our-work .categories li {
     margin-right: 15px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 46, ../sass/6_Pages/_our-work.scss */
+  /* line 62, ../sass/6_Pages/_our-work.scss */
   .our-work .categories li {
     display: block;
     float: none;
@@ -14355,22 +14377,22 @@ body.with-nav-open main {
     text-align: center;
     width: 66%;
   }
-  /* line 68, ../sass/6_Pages/_our-work.scss */
+  /* line 84, ../sass/6_Pages/_our-work.scss */
   .our-work .categories li:last-child {
     margin-right: auto;
   }
 }
-/* line 77, ../sass/6_Pages/_our-work.scss */
+/* line 93, ../sass/6_Pages/_our-work.scss */
 .our-work .video-controls {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 767px) {
-  /* line 80, ../sass/6_Pages/_our-work.scss */
+  /* line 96, ../sass/6_Pages/_our-work.scss */
   .our-work .video-controls .controls.right {
     top: 15px;
   }
 }
-/* line 88, ../sass/6_Pages/_our-work.scss */
+/* line 104, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info {
   background: #000;
   color: #FFF;
@@ -14378,12 +14400,12 @@ body.with-nav-open main {
   position: relative;
 }
 @media screen and (max-width: 767px) {
-  /* line 88, ../sass/6_Pages/_our-work.scss */
+  /* line 104, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info {
     display: block;
   }
 }
-/* line 98, ../sass/6_Pages/_our-work.scss */
+/* line 114, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .work-item-close {
   cursor: pointer;
   color: #FFF;
@@ -14399,7 +14421,7 @@ body.with-nav-open main {
   width: 50px;
   z-index: 1000;
 }
-/* line 112, ../sass/6_Pages/_our-work.scss */
+/* line 128, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .work-item-close:before {
   content: '';
   background: white;
@@ -14412,61 +14434,61 @@ body.with-nav-open main {
   width: 0;
   z-index: -1;
 }
-/* line 124, ../sass/6_Pages/_our-work.scss */
+/* line 140, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .work-item-close:hover {
   transition-delay: 300ms;
   color: #000;
 }
-/* line 127, ../sass/6_Pages/_our-work.scss */
+/* line 143, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .work-item-close:hover:before {
   width: 100px;
 }
 @media screen and (max-width: 768px) {
-  /* line 98, ../sass/6_Pages/_our-work.scss */
+  /* line 114, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .work-item-close {
     transition: none;
     color: #FFF;
   }
-  /* line 132, ../sass/6_Pages/_our-work.scss */
+  /* line 148, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .work-item-close:before {
     opacity: 0;
     transition: none;
   }
-  /* line 136, ../sass/6_Pages/_our-work.scss */
+  /* line 152, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .work-item-close:hover {
     color: #FFF;
   }
 }
-/* line 142, ../sass/6_Pages/_our-work.scss */
+/* line 158, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .client-info {
   width: 33%;
 }
 @media screen and (max-width: 767px) {
-  /* line 142, ../sass/6_Pages/_our-work.scss */
+  /* line 158, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .client-info {
     display: block;
     width: 100%;
   }
 }
-/* line 148, ../sass/6_Pages/_our-work.scss */
+/* line 164, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .client-info h2 {
   font-weight: 400;
   line-height: 1.5em;
   margin-top: 0;
 }
-/* line 154, ../sass/6_Pages/_our-work.scss */
+/* line 170, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .client-info li {
   margin-bottom: 10px;
   font-style: italic;
 }
-/* line 158, ../sass/6_Pages/_our-work.scss */
+/* line 174, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .client-info li em {
   background: #FFF;
   color: #000;
   padding: 2px 5px;
   margin-right: 10px;
 }
-/* line 168, ../sass/6_Pages/_our-work.scss */
+/* line 184, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .description {
   font-size: 21px;
   font-size: 1.313em;
@@ -14475,13 +14497,13 @@ body.with-nav-open main {
   width: 66%;
 }
 @media screen and (max-width: 768px) {
-  /* line 175, ../sass/6_Pages/_our-work.scss */
+  /* line 191, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .description p {
     font-size: 14px;
   }
 }
 @media screen and (max-width: 767px) {
-  /* line 168, ../sass/6_Pages/_our-work.scss */
+  /* line 184, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .description {
     display: block;
     margin-top: 25px;
@@ -14489,35 +14511,35 @@ body.with-nav-open main {
     width: 100%;
   }
 }
-/* line 187, ../sass/6_Pages/_our-work.scss */
+/* line 203, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .logos {
   margin-top: 75px;
 }
 @media screen and (max-width: 767px) {
-  /* line 187, ../sass/6_Pages/_our-work.scss */
+  /* line 203, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .logos {
     display: block;
     width: 100%;
   }
 }
-/* line 193, ../sass/6_Pages/_our-work.scss */
+/* line 209, ../sass/6_Pages/_our-work.scss */
 .our-work .work-item-info .logos li {
   padding-right: 50px;
 }
 @media screen and (max-width: 767px) {
-  /* line 193, ../sass/6_Pages/_our-work.scss */
+  /* line 209, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .logos li {
     display: block;
     margin-bottom: 35px;
     padding-right: 0;
     width: 100%;
   }
-  /* line 200, ../sass/6_Pages/_our-work.scss */
+  /* line 216, ../sass/6_Pages/_our-work.scss */
   .our-work .work-item-info .logos li:last-child {
     margin-bottom: 0;
   }
 }
-/* line 209, ../sass/6_Pages/_our-work.scss */
+/* line 225, ../sass/6_Pages/_our-work.scss */
 .our-work .work-grid {
   margin-bottom: 0;
 }
@@ -14729,7 +14751,7 @@ body.with-nav-open main {
 }
 /* line 156, ../sass/6_Pages/_what-we-do.scss */
 .what-we-do .panel-table .cell h3, .what-we-do .work-grid .work-type .cell h3, .work-grid .what-we-do .work-type .cell h3, .what-we-do .social-outer .social-media .cell h3, .social-outer .what-we-do .social-media .cell h3 {
-  color: rgba(255, 255, 255, 0.7);
+  color: #FFF;
   font-size: 36px;
   font-size: 2.250em;
   margin: 0 0 25px 0;
@@ -14754,7 +14776,7 @@ body.with-nav-open main {
 }
 /* line 174, ../sass/6_Pages/_what-we-do.scss */
 .what-we-do .panel-table .cell p, .what-we-do .work-grid .work-type .cell p, .work-grid .what-we-do .work-type .cell p, .what-we-do .social-outer .social-media .cell p, .social-outer .what-we-do .social-media .cell p {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   font-size: 1.125em;
   font-weight: 100 !important;
@@ -14841,12 +14863,11 @@ body.with-nav-open main {
 .what-we-do .gateway .inner.gateway h2 {
   font-size: 36px;
   font-size: 2.250em;
-  margin-top: 0;
+  margin: 0;
 }
 /* line 249, ../sass/6_Pages/_what-we-do.scss */
 .what-we-do .gateway .inner.gateway p {
-  font-size: 32px;
-  font-size: 2.22222222vmax;
+  font-size: 21px;
 }
 @media screen and (max-width: 960px) {
   /* line 234, ../sass/6_Pages/_what-we-do.scss */
@@ -14893,7 +14914,7 @@ body.with-nav-open main {
 }
 /* line 294, ../sass/6_Pages/_what-we-do.scss */
 .what-we-do .who-we-are .panes .pane.image {
-  background: url(../../images/placeholders/placeholder.jpg) no-repeat top center;
+  background: url(../../images/what-we-do-square.jpg) no-repeat top center;
   background-size: cover;
 }
 @media screen and (max-width: 960px) {
@@ -14929,7 +14950,7 @@ body.with-nav-open main {
   color: rgba(255, 255, 255, 0.7);
   font-size: 36px;
   font-size: 2.250em;
-  margin-bottom: 50px;
+  margin: 0 0 50px 0;
 }
 @media screen and (max-width: 960px) {
   /* line 315, ../sass/6_Pages/_what-we-do.scss */
