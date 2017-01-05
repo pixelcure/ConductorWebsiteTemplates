@@ -1,8 +1,8 @@
   /////////////////////////////////////////
- // Creators /////////////////////////////
+ // Directors /////////////////////////////
 /////////////////////////////////////////
 
-.creators {
+.directors {
 
 	.video-player .video-controls .controls.right {
 	    @include max-screen(767px){
@@ -18,7 +18,12 @@
 		}
 	}
 
+	.work-outer {
+		margin-bottom: 0;
+	}
+
 	.work-grid {
+		margin-bottom: 0;
 		&.no-margin {
 			margin-bottom: 0;
 		}
@@ -35,4 +40,4 @@
 		}
 	} // End Work Grid
 
-} // End Creators
+} // End Directors

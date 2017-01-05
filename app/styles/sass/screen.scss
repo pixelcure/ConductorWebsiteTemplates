@@ -15,33 +15,7 @@
 @import "6_Pages/**/*";
 
 
-/* 
-	Bootstrap Mixins
-	
-	Usage:
-		@include <mixin name>
-	
-	Mixins:
-		container-fixed()
-		make-row()
-		make-xs-column()
-		make-xs-column-offset()
-		make-xs-column-push()
-		make-xs-column-pull()
-		make-sm-column-offset()
-		make-sm-column-push()
-		make-sm-column-pull()
-		make-md-column-offset()
-		make-md-column-push()
-		make-md-column-pull()
-		make-lg-column-offset()
-		make-lg-column-push()
-		make-lg-column-pull()
-		clearfix()
-*/
-
 // Box Sizing
-
 * { 
 	@include box-sizing(border-box);
 }

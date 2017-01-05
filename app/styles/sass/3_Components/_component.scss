@@ -340,6 +340,14 @@
 
 } // End Title Header
 
+	@include max-screen(960px){
+		main.directors .title-header.inner-page .page-name {
+			display: none;
+		}
+		main.directors .title-header.inner-page .page-child {
+			color: rgba(0, 0, 0, .7);
+		}
+	}
 
 .logo-track-callout {
 	background: $white;
@@ -394,10 +402,8 @@
 			    border: 0;
 			    float: right;
 		        height: 367px;
-			    // height: 460px;
     			margin-top: 48px;
     			width: calc(100% - 219px);
-			    // width: calc(100% - 273px);
 			} // end right pane content
 
 			svg {

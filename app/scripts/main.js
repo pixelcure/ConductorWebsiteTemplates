@@ -5,9 +5,6 @@
 // Global
 import Global from './Global/global.main';
 
-// Parallax
-import Parallax from './Parallax/Parallax.main';
-
 // Nav Functionality
 import Nav from './ResponsiveNav/ResponsiveNav.main';
 
@@ -20,8 +17,11 @@ import ShowCaseCarousel from './showcaseCarousel/showcaseCarousel.main';
 // Work Categories
 import WorkCategories from './WorkCategories/WorkCategories.main';
 
+// Work Item Info
+import WorkItemInfo from './WorkItemInfo/WorkItemInfo.main';
+
 // Google Map
-import { OfficeMap } from './Components/OfficeMap/OfficeMap';
+import { OfficeMap } from './OfficeMap/OfficeMap';
 
 // Document Ready
 document.addEventListener('DOMContentLoaded', function(){
@@ -36,5 +36,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 	// Work Categories (Only fires if categories & workgrid exist with id workGrid and id workCategories)
 	var workCategories = new WorkCategories();
+	// Work Item Info (Only fires if work item info container exists with id of workItemInfo)
+	var workItemInfo = new WorkItemInfo();
 
 }); // End Doc Ready

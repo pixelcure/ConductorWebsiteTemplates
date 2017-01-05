@@ -26,7 +26,7 @@ export default class {
 		this.menuClose = this.menuClose.bind(this);		
 
 		// Creators Toggle
-		this.creatorsToggle = this.creatorsToggle.bind(this);
+		this.directorsToggle = this.directorsToggle.bind(this);
 
 		// On Resize Hide or show nav depending on viewport
 		$(window).resize(function() {
@@ -40,13 +40,15 @@ export default class {
 			this.menuTrigger[x].addEventListener('click', this.menuToggle);
 		};
 
-		$(this.nav).find('li.creators').on('mouseover touch', this.creatorsToggle);
+		$(this.nav).find('.directors-toggle').on('click', this.directorsToggle);
 
+		// Click Event for Menu Close button
 		this.menuCloseBtn.addEventListener('click', this.menuClose);
 
 	} // End Constructor
 
-	menuOpen (event) {
+	// On Menu Open
+	menuOpen (e) {
 		// remove tranaslate fast 
 		$('main').removeClass('transition-fast');
 		// add open class, show nav
@@ -63,7 +65,8 @@ export default class {
 
 	};
 
-	menuClose (event) {
+	// On Menu Close
+	menuClose (e) {
 		// default menu icon
 		$( this.menuTrigger ).removeClass('open');
 		// Transition Fast
@@ -79,12 +82,14 @@ export default class {
 		});
 	};
 
-	creatorsToggle (event) {
-		// TBD
+	// Directors Toggle
+	directorsToggle (e) {
+		e.preventDefault();
+		$('nav .dropdown-nav').slideToggle();
 	};
 
 	// Menu Toggle
-	menuToggle (event) {
+	menuToggle (e) {
 		if( $( this.nav ).hasClass('open') ){
 			// Menu Close
 			this.menuClose();

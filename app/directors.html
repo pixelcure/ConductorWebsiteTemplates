@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Conductor Productions | Creators</title>
+    <title>Conductor Productions | Directors - Noah Lydiard</title>
     <meta name="description" content="Video Production Company Located in Downtown Boston" />
     <meta name="viewport" content="width=device-width" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -19,9 +19,21 @@
 </head>
 
 <body>
-    <!-- Header React Component -->
-    <div class="header" id="stickyHeader" data-logourl="images/conductor-logo.svg" data-logolinktitle="Conductor Productions" data-logolinkpath="/"></div>
-    <!-- / End Header React Component -->
+
+    <!-- Sticky Header -->
+    <header class="header" id="stickyHeader">
+        <section class="header-inner inner-wrapper">
+            <a href="/" class="logo-container left" title="Conductor Productions">
+                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+            </a>
+            <div class="menu-icon menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+        </section>
+    </header><!-- / End Sticky Header -->
 
     <nav class="nav-container">
         <div class="inner">
@@ -30,35 +42,39 @@
                 <li><a href="our-work.html" title="Our Work">Our Work</a></li>
                 <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li class="creators">
-                    <span title="Creators">Creators</span>
-                    <ul>
-                        <li class="dropdown-item dropdown-title">Creators</li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Noah Lyndiard">Noah Lyndiard</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Stanley Kubrick">Stanley Kubrick</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Fancis B. Rooster">Francis B. Rooster</a></li>
-                    </ul>
-                    <ul>
-                        <li class="dropdown-item dropdown-title">Editors</li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="James Ferguson">James Ferguson</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Edward Lopatin">Edward Lopatin</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Nicholas Jones">Nicholas Jones</a></li>
+                <li class="directors">
+                    <span class="block directors-toggle" title="Directors">Directors</span>
+                    <ul class="dropdown-nav">
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Noah Lyndiard
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                James Ferguson
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Michael Lavalongname
+                            </a>
+                        </li>                                                
                     </ul>
                 </li>
                 <li><a href="contact.html" title="Contact">Contact</a></li>
                 <li><a href="#" title="Client Portal">Client Portal</a></li>
             </ul>
         </div><!-- / end inner nav -->
-    </nav>
+    </nav><!-- / end navigation -->
 
-    <!-- / end right nav container -->
-    <main class="outer-wrapper bounds creators">
+    <main class="outer-wrapper bounds directors">
         <div class="title-header inner-page outer-wrapper">
             <div class="left">
                 <h1>
                     <a class="first crumb" href="/" title="Conductor Productions">Conductor</a> 
-                    <i class="page-name crumb">Creators</i> 
-                    <span class="page-child">Alfred Hitchcock</span>
+                    <i class="page-name crumb">Directors</i> 
+                    <span class="page-child">Noah Lydiard</span>
                 </h1>
             </div>
             <!-- end left track -->
@@ -81,7 +97,7 @@
         </div>
         <!-- / end title-header -->
         <div class="intro">
-            <h2><span class="pro">Director</span> Alfred Hitchock</h2>
+            <h2><span class="pro">Director</span> Noah Lydiard</h2>
             <p>Mastering the craft since 2003, winning his first award in 2006.</p>
         </div>
         <!-- / end intro -->
@@ -129,7 +145,7 @@
                     Quam repellendus suscipit dicta ad, facere hic libero nobis provident iste! Excepturi iste eligendi, est id, aut assumenda, ipsam placeat voluptas minima atque error. Error sed aliquam quisquam omnis est.
                 </p>
                 <strong class="scroll-cta">
-                    Scroll down, to see more of Alfred's work.
+                    Scroll down, to see more of Noah's work.
                 </strong><!-- / end scroll cta -->
             </div><!-- / end bio -->
             <div class="background-gradient"></div><!-- / end background gradient -->
@@ -221,15 +237,17 @@
             <!-- / end table -->
         </section>
         <!-- / end work outer -->
-        <section class="creator-work work-grid no-margin production-stills">
-            <strong class="work-type">
-                Production Stills 
-            </strong>
+        <section class="director-work work-grid no-margin instagrid">
             <!-- / end work type -->
-            <ul class="stills clean">
-                <li class="still"><img src="images/placeholders/2880x820-1.jpg" alt="Placeholder" /></li>
-                <li class="still"><img src="images/placeholders/2880x820-2.jpg" alt="Placeholder" /></li>
-                <li class="still"><img src="images/placeholders/2880x800-1.jpg" alt="Placeholder" /></li>
+            <ul class="stills clean panel-table">
+                <li class="still cell"><img src="/images/placeholders/insta/one.png" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/two.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/three.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/four.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/five.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/six.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/seven.jpg" alt="Placeholder" /></li>
+                <li class="still cell"><img src="/images/placeholders/insta/eight.jpg" alt="Placeholder" /></li>
             </ul>
             <!-- / end stills -->
         </section>

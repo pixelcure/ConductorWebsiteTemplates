@@ -19,10 +19,21 @@
 </head>
 
 <body>
-    
-    <!-- Header React Component -->
-    <div class="header" id="stickyHeader" data-logourl="images/conductor-logo.svg" data-logolinktitle="Conductor Productions" data-logolinkpath="/"></div>
-    <!-- / End Header React Component -->
+
+    <!-- Sticky Header -->
+    <header class="header" id="stickyHeader">
+        <section class="header-inner inner-wrapper">
+            <a href="/" class="logo-container left" title="Conductor Productions">
+                <img src="images/conductor-logo.svg" alt="Conductor Productions">
+            </a>
+            <div class="menu-icon menu-trigger">
+                <small>menu</small>
+                <span class="top"></span>
+                <span class="mid"></span>
+                <span class="bottom"></span>
+            </div>
+        </section>
+    </header><!-- / End Sticky Header -->
 
     <nav class="nav-container">
         <div class="inner">
@@ -31,27 +42,32 @@
                 <li><a href="our-work.html" title="Our Work">Our Work</a></li>
                 <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
-                <li class="creators">
-                    <span title="Creators">Creators</span>
-                    <ul>
-                        <li class="dropdown-item dropdown-title">Creators</li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Noah Lyndiard">Noah Lyndiard</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Stanley Kubrick">Stanley Kubrick</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Fancis B. Rooster">Francis B. Rooster</a></li>
-                    </ul>
-                    <ul>
-                        <li class="dropdown-item dropdown-title">Editors</li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="James Ferguson">James Ferguson</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Edward Lopatin">Edward Lopatin</a></li>
-                        <li class="dropdown-item"><a href="creators-template.html" title="Nicholas Jones">Nicholas Jones</a></li>
+                <li class="directors">
+                    <span class="block directors-toggle" title="Directors">Directors</span>
+                    <ul class="dropdown-nav">
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Noah Lyndiard
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                James Ferguson
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="directors.html" title="Noah Lyndiard">
+                                Michael Lavalongname
+                            </a>
+                        </li>                                                
                     </ul>
                 </li>
-                <li class="active"><a href="contact.html" title="Contact">Contact</a></li>
+                <li><a href="contact.html" title="Contact">Contact</a></li>
                 <li><a href="#" title="Client Portal">Client Portal</a></li>
             </ul>
         </div><!-- / end inner nav -->
-    </nav>
-    <!-- / end right nav container -->
+    </nav><!-- / end navigation -->
+
     <main class="outer-wrapper bounds contact">
         <div class="title-header inner-page outer-wrapper">
             <div class="left">

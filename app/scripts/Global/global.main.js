@@ -6,9 +6,14 @@
 // will invoke themselves when needed.
 
 
-document.addEventListener('DOMContentLoaded', function() {
+// Global Object
+let global = {} || global;
 
-		// Scroll Top
+
+
+global.stickyHeader = (function () {
+			
+			// Scroll Top
 	    window.addEventListener('scroll', function(e){
 	    	
 	    	// Scroll Offset
@@ -26,4 +31,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	    });
 
-});
+}());

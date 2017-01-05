@@ -104,11 +104,6 @@
 					} // end content spans
 
 					a {
-						// animation-name: scrollDown;
-						// animation-timing-function: cubic-bezier(0.16, -1.65, 1, 2.68);
-						// animation-duration: 2300ms;
-						// animation-fill-mode: forward;
-						// animation-iteration-count: 1500;
     					border: 1px solid black;
     					@include border-radius(360px);
     					height: 48px;

@@ -1,64 +1,54 @@
   //////////////////////////////////////////////
- // Work Categories ///////////////////////////
+ // Work Item Info ///////////////////////////
 //////////////////////////////////////////////
 
-// This script controls the sorting of the
-// different work categories. 
+// This script controls the load of the #workItemInfo container
+// Loads each Item's information, along with the video into the video player.
 
 export default class {
 
 	constructor() {
-		
-		// Bind "this" to Sort
-		this.sort = this.sort.bind(this);
 
-		if(document.getElementById('workGrid') && document.getElementById('workCategories')){
+		this.toggleWorkItem = this.toggleWorkItem.bind(this);
+	
+		if(document.getElementById('workGrid') && document.getElementById('workItemInfo')){
 
-			// Categories Container
-			this.catContainer = document.getElementById('workCategories');
+			// Work Item Info Container
+			this.infoContainer = document.getElementById('workItemInfo');
 
-			// Category Class for click event
-			this.catClassTrigger = this.catContainer.dataset.categoryclass;
-		
-			// Work Grid
-			this.workGrid = document.getElementById('workGrid');
-
-			this.workGridClassTrigger = this.workGrid.dataset.itemclass;
+			// Work Item Class for click event
+			this.infoClassTrigger = this.infoContainer.dataset.itemclass;
 		
 			// Init
 			this.init();
-		}
+
+		};
 
 	};
 
 	init () {
 
+
 		// Cache This
 		let that = this;
 
-		// Add click event
-		document.querySelectorAll(this.catClassTrigger).forEach(function(key){
-			key.addEventListener('click', that.sort);
-		});
+		let items = document.querySelectorAll(this.infoClassTrigger);
+		console.log(items);
+
+		// // Add click event
+		// document.querySelectorAll(this.infoClassTrigger).forEach(function(key){
+		// 	key.addEventListener('click', that.toggleWorkItem);
+		// 	alert('foo');
+		// });
 
 		
 	};
 
-	sort(e) {
+	toggleWorkItem (e) {
+		e.preventDefault();
+		alert('foo');
 
-		// Work Item Category To Show
-		let catType = e.target.dataset.categorytype;
+	}
 
-		// Hide All But Category
-		this.workGrid.querySelectorAll(this.workGridClassTrigger).forEach(function(key){
-			// Not the cateogry? Hide it, or else, show it
-			if(!key.classList.contains(catType)){
-				key.style.display = 'none';
-			} else if(key.classList.contains(catType)){
-				key.style.display = 'block';
-			};
-		});
-
-	};
 
 };
