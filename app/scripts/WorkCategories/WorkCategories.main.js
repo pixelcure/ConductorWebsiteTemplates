@@ -40,12 +40,14 @@ export default class {
 		// Cache This
 		let that = this;
 
-		// Add click event
-		document.querySelectorAll(this.catClassTrigger).forEach(function(key){
-			key.addEventListener('click', that.sort);
-		});
+		// Items
+		let items = document.querySelectorAll(this.catClassTrigger);
 
-		
+		// Add click event
+		for(let x = 0; x < items.length; ++x){
+			items[x].addEventListener('click', that.sort);
+		}
+
 	};
 
 	sort(e) {
@@ -69,34 +71,36 @@ export default class {
 		//  Hide Work Grid during sort
 		this.workGrid.classList.add('sorting');
 
+		// Items
+		let items = this.workGrid.querySelectorAll(this.workGridClassTrigger);
+
 		// Hide All But Category
-		this.workGrid.querySelectorAll(this.workGridClassTrigger).forEach(function(key){
-			
+		for(let x = 0; x < items.length; ++x){
 			// If greyed out before, remove that in case it's our category
-			key.classList.remove('greyed');
+			items[x].classList.remove('greyed');
 
 			// Not the cateogry? Grey it out, or else clone the element, 
 			// remove the element, and then prepend it to the top of the work items
-			if(!key.classList.contains(catType)){
-				
+			if(!items[x].classList.contains(catType)){
+
 				// Grey out
-				key.classList.add('greyed');
-			
-			} else if(key.classList.contains(catType)){
-			
+				items[x].classList.add('greyed');
+
+			} else if(items[x].classList.contains(catType)){
+
 				// Clone element
-				let catEl = key.cloneNode(true);
-				
+				let catEl = items[x].cloneNode(true);
+
 				// Prepend element at top of work grid item list
-				that.workGrid.querySelector('ul.grid-row').prepend(catEl);
+				// that.workGrid.querySelector('ul.grid-row').prepend(catEl);
+				$('#workGrid ul.grid-row').prepend(catEl);
 
 				// Remove previous element, it's now been pushed to the top
-				key.parentElement.removeChild(key);
+				items[x].parentElement.removeChild(items[x]);
 
 			};
 
-
-		});
+		};
 
 		// Store grid row and get offset from top of page
 		var gridRow = this.workGrid.querySelector('.grid-row');

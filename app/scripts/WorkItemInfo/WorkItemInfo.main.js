@@ -82,7 +82,8 @@ export default class extends VideoPlayer {
 		$(this.infoContainer.children).remove();
 
 		// Append itemInfo
-		this.infoContainer.append(itemInfo);
+		// this.infoContainer.append(itemInfo);
+		$('#workItemInfo').append(itemInfo);
 		
 		// Slide Down
 		$(this.infoContainer).slideDown();
