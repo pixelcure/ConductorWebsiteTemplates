@@ -9,7 +9,8 @@
 			@extend  .clean;
 
 			li {
-				background-image: radial-gradient(50% 45%, rgba(81, 84, 86, 0.45) 50%, rgba(65, 72, 79, 0.33) 100%);
+				// background-image: radial-gradient(50% 45%, rgba(81, 84, 86, 0.45) 50%, rgba(65, 72, 79, 0.33) 100%);
+				background-image: radial-gradient(50% 45%, rgba(81, 84, 86, 0.53) 50%, rgba(65, 72, 79, 0.33) 100%);
 				border: 1px solid rgba(53, 53, 53, 0.15);
 				height: 240px;
 				position: relative;
@@ -17,23 +18,27 @@
 				transition: .3s;
 				width: 25%;
 
-				// TEMP
-				h1 {
-				    text-align: center;
-				    color: #FFF;
-				    text-shadow: 1px 1px 1px #000;
-				    font-weight: 800;
-				    position: absolute;
-				    top: 50%;
+				// Logo Image
+				img {
 				    left: 50%;
+					position: absolute;
+				    top: 50%;
 				    transform: translate(-50%, -50%);
-				    margin: 0;
+				    width: 66%;
+				    @include max-screen(767px){
+						display: block;
+						margin: 50px auto 50px;
+			    		position: static;
+						transform: none;
+				    }
 				}
 
 				@include max-screen(960px){
 					width: 50%;
 				}
 				@include max-screen(767px){
+					height: auto;
+					height: initial;
 					width: 100%;
 				}
 

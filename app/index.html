@@ -101,12 +101,12 @@
                     <div class="item">
                         <img src="images/home-river.jpg" alt="Charles River" />
                     </div><!-- / end item -->
-                    <div class="item" class="video" data-videoplayer="true" data-videourl="videos/big_buck_bunny.mp4">
+                    <div class="item" class="video-outer" data-videoplayer="true" data-videourl="videos/big_buck_bunny.mp4">
                         <div class="video-container">
                             <span class="play-btn" title="Play">
                                 <span class="play"></span>
                             </span>
-                            <video muted>
+                            <video class="video" muted>
                                 <source src="videos/big_buck_bunny.mp4" type="video/mp4">
                                 <p>Your browser does not support H.264/MP4.</p>
                             </video>
@@ -125,13 +125,13 @@
                 <!-- / end slide list -->
                 <ul class="controls right">
                     <li>
-                        <a href="#" title="Restart" class="icon icon-restart"></a>
+                        <a href="#" id="restart" title="Restart" class="icon icon-restart"></a>
                     </li>
                     <li>
-                        <a href="#" title="Pause" class="icon icon-pause"></a>
+                        <a href="#" id="pause" title="Pause" class="icon icon-pause"></a>
                     </li>
                     <li>
-                        <a href="#" title="Volume"  class="icon icon-sound"></a>
+                        <a href="#" id="volume" title="Volume"  class="icon icon-sound"></a>
                     </li>
                 </ul>
                 <!-- / end video controls -->
@@ -377,34 +377,37 @@
                             <span class="icon icon-facebook"></span>
                         </a>
                     </li>
-                    <li class="twitter">
-                        <a href="https://twitter.com/conductorprod" target="_blank" title="Twitter">
-                            <span class="icon icon-twitter"></span>
+                    <li class="instagram">
+                        <a href="#" target="_blank" title="Instagram">
+                            <span class="icon icon-instagram"></span>
                         </a>
                     </li>
-                    <li class="instagram">
-                        <a href="#" title="Instagram">
-                            <span class="icon icon-instagram"></span>
+                    <li class="linked-in">
+                        <a href="http://www.linkedin.com/pub/noah-lydiard/3/b5b/749" target="_blank" title="Linked In">
+                            <span class="icon icon-linked-in"></span>
                         </a>
                     </li>
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <a href="http://conductor.pixelcureinteractive.com/about/">About</a>
+                        <a href="/our-work.html" title="Our Work">Our Work</a>
                     </li>
                     <li>
-                        <a href="http://conductor.pixelcureinteractive.com/work/">Work</a>
+                        <a href="/clients.html" title="Clients">Clients</a>
                     </li>
                     <li>
-                        <a href="http://conductor.pixelcureinteractive.com/drtv/">DRTV</a>
+                        <a href="/what-we-do.html" title="What We Do">What We Do</a>
                     </li>
                     <li>
-                        <a href="http://conductor.pixelcureinteractive.com/contact/">Contact</a>
+                        <a href="/directors.html" title="Directors">Directors</a>
                     </li>
+                    <li>
+                        <a href="/contact.html" title="Contact">Contact</a>
+                    </li>                                        
                     <li>
                         <a href="https://conductorproductions.com/client/login">Login</a>
                     </li>
-                </ul>
+                </ul><!-- / end menu -->
             </aside>
             <!-- / end footer nav -->
         </section>

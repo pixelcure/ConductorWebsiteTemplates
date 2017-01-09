@@ -24,16 +24,7 @@
 
 	.work-grid {
 		margin-bottom: 0;
-		&.no-margin {
-			margin-bottom: 0;
-		}
 		@include max-screen(767px){
-			margin-bottom: 45px;
-			
-			&.no-margin {
-				margin-bottom: 0;
-			}
-
 			.work-type {
 				text-align: center;
 			}
