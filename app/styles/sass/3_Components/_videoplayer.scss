@@ -135,11 +135,6 @@
 		overflow: hidden;
 		padding: 35px 50px 0;
 
-		&.disabled {
-			opacity: .3;
-		    cursor: not-allowed;
-		}
-
 		.slick-dots {
 			display: flex;
 			margin: 0;
@@ -213,6 +208,13 @@
 			} // End Li Control Container
 
 		} // end controls
+
+		&.disabled {
+			.controls {			
+				opacity: .3;
+			    cursor: not-allowed;
+			}
+		} // End Disabled
 
 		@include max-screen(767px){
 		    height: 75px;

@@ -46,17 +46,42 @@ export default class extends VideoPlayer {
 			easing : 'ease-in'
 		});
 
+		// // Set Size of Carousel Based on Current Item
+		// var a = document.getElementById('heroCarousel');
+		// var b = document.querySelector('.slick-current');
+		
+		// // Set Hero Container Height
+		// a.style.height = b.getBoundingClientRect().height;
+
+		// // On Resize
+		// $(window).resize(function(){
+		// 	// Set Hero Container Height
+		// 	var a = document.getElementById('heroCarousel');
+		// 	var b = document.querySelector('.slick-current');
+		// 	a.style.height = b.getBoundingClientRect().height;
+		// });
+
 		// On Slice Change, Fire before, Handle video
 		$(this.container).on('beforeChange', function(){
 			
 			// If current slide contains a video container
 			if($('.slick-current').find('.video-container').length > 0){
+				
+				// that.currentVideo.pause();
 
 				// Pause Video
-				that.currentVideo.pause();
+				let video = $('video.playing')[0];
+
+				// Pause Video
+				video.pause();
+				
+				$('video').prev('.play-btn').css('display' ,'block');
+
+				// Remove Playing Class
+				$(video).removeClass('playing')
 
 				// Remove it as current video
-				that.currentVideo = null;
+				// that.currentVideo = null;
 
 			};
 		
