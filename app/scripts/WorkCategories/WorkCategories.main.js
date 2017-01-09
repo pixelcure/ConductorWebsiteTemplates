@@ -3,6 +3,8 @@
 //////////////////////////////////////////////
 
 
+// Jquery
+import $ from 'jquery';
 
 // This script controls the sorting of the
 // different work categories. 
@@ -99,8 +101,9 @@ export default class {
 		// Store grid row and get offset from top of page
 		var gridRow = this.workGrid.querySelector('.grid-row');
 
-		// Scroll to grid row
-		console.log(gridRow.getBoundingClientRect().top)
+        $('html, body').animate({
+          scrollTop: $(gridRow).offset().top
+        }, 1000);
 
 		// Show work Grid
 		that.workGrid.classList.remove('sorting');

@@ -4,13 +4,6 @@
 
 .our-work {
 
-	.work-item-info {
-		display: none;
-		&.open {
-			display: block;
-		}
-	} // End Work Item Info
-
 	.middle {
 		&.work-intro {
 		    background: rgba(0, 0, 0, .05);
@@ -111,11 +104,10 @@
 	.work-item-info {
 		background: $black;
 		color: $white;
-	    padding: 50px 50px 75px;
 		position: relative;
 		
-		@include max-screen(767px){
-			display: none;
+		.item-info {
+			padding: 50px 50px 75px;
 		}
 
 		.work-item-close {

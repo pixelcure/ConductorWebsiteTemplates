@@ -2,6 +2,9 @@
  // Work Item Info ///////////////////////////
 //////////////////////////////////////////////
 
+// Jquery
+import $ from 'jquery';
+
 // This script controls the load of the #workItemInfo container
 // Loads each Item's information, along with the video into the video player.
 
@@ -17,6 +20,9 @@ export default class {
 
 			// Work Item Class for click event
 			this.playBtn = document.querySelectorAll('.video-player .play-btn');
+
+			// Controls
+			this.controls = document.getElementById('videoControls');
 			
 			// Bind This to control handlers - toggleRestart
 			this.toggleRestart = this.toggleRestart.bind(this);
@@ -82,6 +88,13 @@ export default class {
 		// Update Current Video
 		this.currentVideo = e.target.parentElement.querySelectorAll('.video')[0];
 
+		// Playing
+		this.currentVideo.classList.add('playing');
+
+		// Remove Disabled Controls
+		// this.controls.classList.remove('disabled');
+		$('#videoControls').removeClass('disabled');
+
 		// Play Video
 		this.currentVideo.play();
 
@@ -93,12 +106,11 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
-		console.warn(this.currentVideo);
+		let video = $('video.playing')[0];
 
 		// If Current Video, otherwise these are null
-		if(this.currentVideo){
-			this.currentVideo.currenttime = 0;
-		};
+		// this.currentVideo.currenttime = 0;
+		video.currentTime = 0;
 
 	};
 
@@ -107,17 +119,33 @@ export default class {
 
 		// Prevent Default
 		e.preventDefault();
+
+		let video = $('video.playing')[0];
 		
 		// If Current Video exists, pause or play it depending on condition
-		if(this.currentVideo && this.currentVideo.paused){
+		if(video && video.paused){
 		
 			// Play
-			this.currentVideo.play();
+			// this.currentVideo.play();
+			video.play();
+
+			// Remove Play Icon
+			document.getElementById('pause').classList.remove('icon-play');
+			
+			// Add Pause Icon
+			document.getElementById('pause').classList.add('icon-pause');			
 		
-		} else if(this.currentVideo && !this.currentVideo.paused) {
+		} else if(video && !video.paused) {
 		
 			// Pause
-			this.currentVideo.pause();
+			// this.currentVideo.pause();
+			video.pause();
+
+			// Remove Pause Icon
+			document.getElementById('pause').classList.remove('icon-pause');
+			
+			// Add Play Icon
+			document.getElementById('pause').classList.add('icon-play');			
 		
 		};
 
@@ -128,20 +156,42 @@ export default class {
 
 		// Prevent Default
 		e.preventDefault();
+
+		let video = $('video.playing')[0];
 		
 		// If Current Video exists, mute or add volume depending on condition
-		if(this.currentVideo && this.currentVideo.muted){
+		if(video && video.muted){
 			
 			// Play Audio
-			this.currentVideo.muted = false;
+			// this.currentVideo.muted = false;
+			video.muted = false;
+
+			// Remove Muted Icon
+			document.getElementById('volume').classList.remove('icon-mute-video');
+			
+			// Add Sound Icon
+			document.getElementById('volume').classList.add('icon-sound');
 		
-		} else if(this.currentVideo && !this.currentVideo.muted) {
+		// } else if(this.currentVideo && !this.currentVideo.muted) {
+		} else if(video && !video.muted) {
 			
 			// Mute
-			this.currentVideo.muted = true;
+			// this.currentVideo.muted = true;
+			video.muted = true;
+
+			// Remove Sound Icon
+			document.getElementById('volume').classList.remove('icon-sound');
+			
+			// Add Muted Icon
+			document.getElementById('volume').classList.add('icon-mute-video');			
 		
 		};
 
+	};
+
+	// Load Work Item
+	loadWorkItem (e) {
+		e.preventDefault();
 	};
 
 };

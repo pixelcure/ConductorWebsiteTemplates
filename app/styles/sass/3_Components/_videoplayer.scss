@@ -135,6 +135,11 @@
 		overflow: hidden;
 		padding: 35px 50px 0;
 
+		&.disabled {
+			opacity: .3;
+		    cursor: not-allowed;
+		}
+
 		.slick-dots {
 			display: flex;
 			margin: 0;
@@ -183,7 +188,7 @@
 			padding: 0;
 			position: relative;
 			top: -5px;
-			
+
 			li {
 				color: $cBlue;
 				font-size: 24px;

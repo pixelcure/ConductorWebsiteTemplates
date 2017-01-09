@@ -106,6 +106,7 @@
 			    @include max-screen(768px){
 			    	border: 0;
 			    	opacity: 1;
+			    	transition: none;
 			    }
 
 				.inner {
