@@ -79,6 +79,13 @@ export default class {
 	
 	};
 
+	loadVideo (videoUrl) {
+		// Load Video into Work Video Player
+		$('#standalonePlayer').find('source').attr('src', videoUrl);
+		// Show Play Button
+		$('.video-container .play-btn').fadeIn();
+	}
+
 	// Play Video on Play Button Click
 	playVideo (e) {
 		
@@ -106,11 +113,13 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
-		let video = $('video.playing')[0];
+		// Video
+		let video = $('video.playing')[0] || null;
 
-		// If Current Video, otherwise these are null
-		// this.currentVideo.currenttime = 0;
-		video.currentTime = 0;
+		// If video is playing, restart it
+		if(video){
+			video.currentTime = 0;
+		}
 
 	};
 

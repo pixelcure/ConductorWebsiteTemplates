@@ -6,13 +6,18 @@
 // Jquery
 import $ from 'jquery';
 
+// Work Item Info
+import WorkItemInfo from '../WorkItemInfo/WorkItemInfo.main.js';
+
 // This script controls the sorting of the
 // different work categories. 
 
-export default class {
+export default class extends WorkItemInfo {
 
 	constructor() {
 		
+		super();
+
 		// Bind "this" to Sort
 		this.sort = this.sort.bind(this);
 
@@ -30,12 +35,12 @@ export default class {
 			this.workGridClassTrigger = this.workGrid.dataset.itemclass;
 		
 			// Init
-			this.init();
+			this.setEvents();
 		}
 
 	};
 
-	init () {
+	setEvents () {
 
 		// Cache This
 		let that = this;
@@ -53,7 +58,7 @@ export default class {
 	sort(e) {
 
 		const that = this;
-		
+
 		// Find Active Class
 		var removeActiveClass = this.catContainer.querySelector('.active') ? this.catContainer.querySelector('.active') : null;
 
@@ -111,6 +116,9 @@ export default class {
 
 		// Show work Grid
 		that.workGrid.classList.remove('sorting');
+
+		// Set Item Click Handlers since DOM items have been shifted around
+		this.setEvents();
 
 	};
 
