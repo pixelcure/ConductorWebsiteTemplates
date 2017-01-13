@@ -37,11 +37,10 @@
 
     <nav class="nav-container">
         <div class="inner">
-            <div class="nav-close" id="menuClose">X</div>
+            <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
-                <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
+                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
@@ -61,7 +60,8 @@
                             </a>
                         </li>                                                
                     </ul>
-                </li>
+                </li><!-- / end directors -->
+                <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="contact.html" title="Contact">Contact</a></li>
                 <li><a href="#" title="Client Portal">Client Portal</a></li>
             </ul>
@@ -73,7 +73,7 @@
             <div class="left">
                 <h1>
                     <b class="first">We're Conductor.</b>
-                    <i class="page-name">We're here for you.</i>
+                    <i class="page-name">We’re a company of Film, TV, and Commercial Directors and Producers</i>
                 </h1>
             </div>
             <!-- end left track -->
@@ -101,14 +101,12 @@
                     <div class="item">
                         <img src="images/home-river.jpg" alt="Charles River" />
                     </div><!-- / end item -->
-                    <div class="item" class="video-outer" data-videoplayer="true" data-videourl="videos/big_buck_bunny.mp4">
+                    <div class="item" class="video-outer" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119">
                         <div class="video-container">
                             <span class="play-btn" title="Play">
                                 <span class="play"></span>
                             </span>
-                            <video class="video" muted>
-                                <source src="videos/big_buck_bunny.mp4" type="video/mp4">
-                                <p>Your browser does not support H.264/MP4.</p>
+                            <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/home-river.jpg" muted>
                             </video>
                         </div><!-- / end video container -->
                     </div>
@@ -308,7 +306,7 @@
                 <aside class="callout-sidebar">                
                     <ul>
                         <li><span>Commercials</span></li>
-                        <li><span>Direct Response</span></li>
+                        <li><span>Brand Response</span></li>
                         <li><span>Digital Content</span></li>
                     </ul>       
                 </aside><!-- / end callout side bar -->
@@ -390,16 +388,16 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <a href="/our-work.html" title="Our Work">Our Work</a>
-                    </li>
-                    <li>
-                        <a href="/clients.html" title="Clients">Clients</a>
-                    </li>
-                    <li>
                         <a href="/what-we-do.html" title="What We Do">What We Do</a>
                     </li>
                     <li>
+                        <a href="/our-work.html" title="Our Work">Our Work</a>
+                    </li>
+                    <li>
                         <a href="/directors.html" title="Directors">Directors</a>
+                    </li>
+                    <li>
+                        <a href="/clients.html" title="Clients">Clients</a>
                     </li>
                     <li>
                         <a href="/contact.html" title="Contact">Contact</a>

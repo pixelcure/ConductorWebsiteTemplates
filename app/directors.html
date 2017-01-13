@@ -37,11 +37,10 @@
 
     <nav class="nav-container">
         <div class="inner">
-            <div class="nav-close" id="menuClose">X</div>
+            <div class="nav-close" id="menuClose">&times;</div>
             <ul>
-                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
-                <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="what-we-do.html" title="What We Do">What We Do</a></li>
+                <li><a href="our-work.html" title="Our Work">Our Work</a></li>
                 <li class="directors">
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
@@ -61,7 +60,8 @@
                             </a>
                         </li>                                                
                     </ul>
-                </li>
+                </li><!-- / end directors -->
+                <li><a href="clients.html" title="Clients">Clients</a></li>
                 <li><a href="contact.html" title="Contact">Contact</a></li>
                 <li><a href="#" title="Client Portal">Client Portal</a></li>
             </ul>
@@ -97,7 +97,7 @@
         </div>
         <!-- / end title-header -->
         <div class="intro">
-            <h2><span class="pro">Director</span> Noah Lydiard</h2>
+            <h2><span class="profession">Director</span> Noah Lydiard</h2>
             <p>Executive Producer, Director, Owner</p>
         </div>
         <!-- / end intro -->
@@ -108,9 +108,7 @@
                         <span class="play-btn" title="Play">
                             <span class="play"></span>
                         </span>
-                        <video class="video" muted>
-                            <source src="videos/big_buck_bunny.mp4" type="video/mp4">
-                            <p>Your browser does not support H.264/MP4.</p>
+                        <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/home-river.jpg">
                         </video>
                     </div><!-- / end video container -->
                 </div><!-- / end video -->         
@@ -142,7 +140,7 @@
                     Ever since he saw a behind the scenes look at the making of Raiders of the Lost Ark was enough to cement Noah's unwavering love of all things cinema… he has been a student ever since. Having been in the commercial and advertising business for more than 15 years, Noah’s bandwidth of knowledge and understanding of the industry reaches far beyond his Massachusetts roots. Noah has worked with national brands, various award-winning advertising agencies, as well as production companies. He has built a broadcast department, shot independent films, and edited television shows. Continuing to let his passion for movies fuel his career, his latest adventure includes directing 2nd unit action scenes, designing and directing the opening sequence as well as co-producing in the feature film, Office Uprising.
                 </p>
                 <p>
-                    Noah’s openness, and friendliness are the basis of his success. His simple deep-rooted love for filmmaking and its related industries create a lasting trust between himself and his clients; making Conductor one of the most sought after companies for Brand Advertising and Direct Response.
+                    Noah’s openness, and friendliness are the basis of his success. His simple deep-rooted love for filmmaking and its related industries create a lasting trust between himself and his clients; making Conductor one of the most sought after companies for Brand Advertising and Brand Response.
                 </p>
                 <p>
                     Through and through, this self built, production junkie can be described in the simplest of terms: Family man. Executive Producer. Director. Movie Nerd. Believer.
@@ -155,10 +153,6 @@
         </section>
         <!-- / end middle see more work section -->
         <section class="work-outer work-grid outer-wrapper">
-            <strong class="work-type">
-                Video Reels
-            </strong>
-            <!-- / end work type -->
             <ul class="grid-row">
                 <li class="item">
                     <a href="#">
@@ -254,42 +248,7 @@
             </ul>
             <!-- / end stills -->
         </section>
-        <!-- / end work outer production stills -->
-        <section class="services-outer services logo-track-callout">
-            <div class="track left-pane">
-                <div class="pane-holder"></div><!-- / end content -->
-                <svg viewBox="542 433 221 372" class="right">
-                    <path d="M544,435.518 L759.752,620.516" stroke="#000" stroke-width="2" fill="none"></path>
-                    <path d="M543.67739,803.710836 L760.148806,619.555164" stroke="#000" stroke-width="2" fill="none"></path>
-                </svg>
-            </div><!-- / end left track -->
-            <div class="track right-pane">
-                <svg viewBox="284 342 217 366" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <polygon id="Page-1" stroke="none" fill="#000" fill-rule="evenodd" points="501.752 709.542 501.752 523.878 501.752 345 286 524.544"></polygon>
-                </svg>
-                <div class="pane-holder"></div><!-- / end pane content -->
-            </div><!-- end right track -->
-            <div class="gradient"></div><!-- / end gradient -->
-            <div class="outer-content-top">
-                <div class="inner-content">
-                    <p>
-                        Let us show you our secrets, who we are, how hard we work and how wide <br />our reach is.
-                    </p>
-                    <small>You'll be happy you did. </small>
-                    <a href="#" title="Our Services" data-role="button" class="button">
-                        Our Services
-                    </a>   
-                </div><!-- / end content -->
-                <aside class="callout-sidebar">                
-                    <ul>
-                        <li><span>Commercials</span></li>
-                        <li><span>Direct Response</span></li>
-                        <li><span>Digital Content</span></li>
-                    </ul>       
-                </aside><!-- / end callout side bar -->
-            </div><!-- / end outer content top -->
-        </section><!-- / end services -->
-        
+        <!-- / end work outer production stills -->        
         <section class="container social-outer gradient">
             <h3>Follow us on social media</h3>
             <ul class="social-media">
@@ -345,16 +304,16 @@
                 </ul><!-- / end social media -->
                 <ul class="menu">
                     <li>
-                        <a href="/our-work.html" title="Our Work">Our Work</a>
-                    </li>
-                    <li>
-                        <a href="/clients.html" title="Clients">Clients</a>
-                    </li>
-                    <li>
                         <a href="/what-we-do.html" title="What We Do">What We Do</a>
                     </li>
                     <li>
+                        <a href="/our-work.html" title="Our Work">Our Work</a>
+                    </li>
+                    <li>
                         <a href="/directors.html" title="Directors">Directors</a>
+                    </li>
+                    <li>
+                        <a href="/clients.html" title="Clients">Clients</a>
                     </li>
                     <li>
                         <a href="/contact.html" title="Contact">Contact</a>
