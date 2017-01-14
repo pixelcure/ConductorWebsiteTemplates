@@ -18,6 +18,9 @@ export default class {
 		// Does a video player exist?
 		if(document.querySelectorAll('.video-player')){
 
+			// Video Player
+			this.videoPlayer = document.querySelector('.video-player')[0];
+
 			// Work Item Class for click event
 			this.playBtn = document.querySelectorAll('.video-player .play-btn');
 
@@ -79,31 +82,38 @@ export default class {
 	
 	};
 
-	loadVideo (videoUrl) {
+	loadVideo (videoUrl, posterUrl) {
+		console.log('video' + videoUrl);
+		console.log('poster' + posterUrl);
 		// Load Video into Work Video Player
-		$('#standalonePlayer').find('source').attr('src', videoUrl);
+		$('#standalonePlayer').attr('src', videoUrl).attr('poster', posterUrl);
 		// Show Play Button
 		$('.video-container .play-btn').fadeIn();
 	}
 
 	// Play Video on Play Button Click
 	playVideo (e) {
-		
-		// Hide Play Button
-		e.currentTarget.style.display = 'none';
 
 		// Update Current Video
 		this.currentVideo = e.target.parentElement.querySelectorAll('.video')[0];
 
-		// Playing
-		this.currentVideo.classList.add('playing');
+		// Only play video if there is a source
+		if(this.currentVideo.getAttribute('src')){
+			// Playing
+			this.currentVideo.classList.add('playing');
 
-		// Remove Disabled Controls
-		// this.controls.classList.remove('disabled');
-		$('#videoControls').removeClass('disabled');
+			// Remove Disabled Controls
+			// this.controls.classList.remove('disabled');
+			$('#videoControls').removeClass('disabled');
 
-		// Play Video
-		this.currentVideo.play();
+			// Hide Play Button
+			e.currentTarget.style.display = 'none';
+
+			// Play Video
+			this.currentVideo.play();
+
+		};
+
 
 	};
 

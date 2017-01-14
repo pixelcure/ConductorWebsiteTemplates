@@ -2,6 +2,25 @@
  // VIDEO PLAYER ///////////////////////////
 ///////////////////////////////////////////
 
+// Hide Native iOS Play Btn
+// http://stackoverflow.com/questions/8911247/hide-iphone-html5-video-play-button
+
+*::-webkit-media-controls-panel {
+  display: none!important;
+  -webkit-appearance: none;
+}
+// Old shadow dom for play button
+*::--webkit-media-controls-play-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
+// New shadow dom for play button
+*::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
 .video-player {
 
 	.video-container {
@@ -197,13 +216,18 @@
 					display: block;
 					font-family: $icoMoon;
 					
-					&:focus,
-					&:active,
 					&:hover {
 						opacity: .5;
 						outline: none;
 						text-decoration: none;
 					}
+
+					&:focus,
+					&:active {
+						opacity: 1;
+						outline: none;
+						text-decoration: none;
+					}			
 				} // End Control
 			} // End Li Control Container
 

@@ -33,13 +33,13 @@ export default class extends VideoPlayer {
 			this.infoClassTrigger = this.infoContainer.dataset.itemclass;
 
 			// Init
-			this.init();
+			this.setStage();
 
 		};
 
 	};
 
-	init () {
+	setStage () {
 
 		// Cache This
 		let that = this;
@@ -49,11 +49,24 @@ export default class extends VideoPlayer {
 
 		// Work Item View Triggers to load content into work item info container
 		let infoTriggers = document.querySelectorAll('.' + this.infoClassTrigger);
+
+		// Hash Tag, subtracts '#'
+		let hash = window.location.hash ? window.location.hash.substr(1, 2) : null;
 		
 		// Sets click event on Item triggers "view project" button.
 		for(let x = 0; x < infoTriggers.length; ++x){
 			// Set click
 			infoTriggers[x].addEventListener('click', that.toggleWorkItem);
+		};
+
+		// Check to see if we are loading in a video right off the bat
+		if(hash){
+			
+			// Force click on item, toggles the work item
+			for(let x = 0; x < items.length; ++x){
+				items[x].dataset.videoid === hash ? items[x].click() : '';
+			};
+
 		};
 
 	};
@@ -73,8 +86,20 @@ export default class extends VideoPlayer {
 		// Item Info,
 		// Drills from button > .inner > .caption > anchor > item container,
 		// this then finds ".item-info" el, clones it, and injects it into the item info container, id #workItemInfo
-		let itemInfo = e.target.parentNode.parentNode.parentNode.parentNode.querySelector('.item-info').cloneNode(true);
-		
+		let itemInfo = e.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector('.item-info').cloneNode(true);
+		// Video Url - Video Url that will be loaded in standalone player src
+		let videoUrl = e.currentTarget.dataset.videourl;
+		// Poster Url - Poster that will be loaded in standalone player
+		let posterUrl = e.currentTarget.dataset.posterurl;
+		// Video Id
+		let videoId = e.currentTarget.dataset.videoid;
+
+		// Set Hashtag
+		window.location.hash = videoId;
+
+		// Load Video;
+		this.loadVideo(videoUrl, posterUrl);
+
 		// Hide Work Item Info Container
 		this.infoContainer.style.display = 'none';
 
@@ -93,7 +118,7 @@ export default class extends VideoPlayer {
 
 		// Animate to Item Info
         $('html, body').animate({
-          scrollTop: offset - 300
+          scrollTop: offset - 450
         }, 1000);
 
 		// Close Button Click Event Setup

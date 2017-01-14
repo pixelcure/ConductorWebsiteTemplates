@@ -13139,12 +13139,30 @@ nav.open {
   display: block;
 }
 
-/* line 7, ../sass/3_Components/_videoplayer.scss */
+/* line 8, ../sass/3_Components/_videoplayer.scss */
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* line 13, ../sass/3_Components/_videoplayer.scss */
+*::--webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* line 19, ../sass/3_Components/_videoplayer.scss */
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* line 26, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-container {
   position: relative;
   width: 100%;
 }
-/* line 11, ../sass/3_Components/_videoplayer.scss */
+/* line 30, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-container .play-btn {
   background: rgba(0, 0, 0, 0.5);
   border-radius: 360px;
@@ -13158,7 +13176,7 @@ nav.open {
   width: 50px;
   z-index: 1000;
 }
-/* line 24, ../sass/3_Components/_videoplayer.scss */
+/* line 43, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-container .play-btn:before {
   border-radius: 360px;
   border: 5px solid rgba(0, 0, 0, 0.5);
@@ -13169,7 +13187,7 @@ nav.open {
   top: -50%;
   width: 100px;
 }
-/* line 35, ../sass/3_Components/_videoplayer.scss */
+/* line 54, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-container .play-btn .play {
   display: block;
   border-top: 15px solid transparent;
@@ -13179,37 +13197,37 @@ nav.open {
   height: 0px;
   margin: 10px 15px;
 }
-/* line 47, ../sass/3_Components/_videoplayer.scss */
+/* line 66, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-container video {
   height: auto;
   width: 100%;
 }
-/* line 54, ../sass/3_Components/_videoplayer.scss */
+/* line 73, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner {
   animation: 400ms fadeIn ease-in;
   position: relative;
   overflow: hidden;
 }
 @media screen and (max-width: 769px) {
-  /* line 54, ../sass/3_Components/_videoplayer.scss */
+  /* line 73, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-inner {
     animation: none;
   }
 }
-/* line 64, ../sass/3_Components/_videoplayer.scss */
+/* line 83, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-carousel {
   list-style-type: none;
   padding: 0;
 }
-/* line 68, ../sass/3_Components/_videoplayer.scss */
+/* line 87, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-carousel .slick-arrow {
   display: none !important;
 }
-/* line 71, ../sass/3_Components/_videoplayer.scss */
+/* line 90, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-carousel .item {
   outline: none;
 }
-/* line 77, ../sass/3_Components/_videoplayer.scss */
+/* line 96, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-callout {
   animation: 1s fadeDown linear;
   animation-delay: 400ms;
@@ -13221,7 +13239,7 @@ nav.open {
   width: 33%;
   z-index: 100;
 }
-/* line 88, ../sass/3_Components/_videoplayer.scss */
+/* line 107, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-callout:before {
   background: rgba(255, 255, 255, 0.3);
   content: '';
@@ -13233,7 +13251,7 @@ nav.open {
   width: 1900px;
   z-index: 100;
 }
-/* line 99, ../sass/3_Components/_videoplayer.scss */
+/* line 118, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-callout h2 {
   color: rgba(0, 0, 0, 0.5);
   font-size: 36px;
@@ -13247,46 +13265,46 @@ nav.open {
   position: relative;
   z-index: 120;
 }
-/* line 111, ../sass/3_Components/_videoplayer.scss */
+/* line 130, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-callout h2 span {
   color: #000;
 }
 @media screen and (max-width: 1050px) {
-  /* line 99, ../sass/3_Components/_videoplayer.scss */
+  /* line 118, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-inner .video-callout h2 {
     font-size: 24px;
   }
 }
 @media screen and (max-width: 815px) {
-  /* line 99, ../sass/3_Components/_videoplayer.scss */
+  /* line 118, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-inner .video-callout h2 {
     font-size: 21px;
   }
 }
-/* line 121, ../sass/3_Components/_videoplayer.scss */
+/* line 140, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-inner .video-callout a {
   margin-right: 5px;
   position: relative;
   z-index: 120;
 }
 @media screen and (max-width: 767px) {
-  /* line 77, ../sass/3_Components/_videoplayer.scss */
+  /* line 96, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-inner .video-callout {
     display: none;
   }
 }
-/* line 134, ../sass/3_Components/_videoplayer.scss */
+/* line 153, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls {
   overflow: hidden;
   padding: 35px 50px 0;
 }
-/* line 138, ../sass/3_Components/_videoplayer.scss */
+/* line 157, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots {
   display: flex;
   margin: 0;
   padding: 0;
 }
-/* line 142, ../sass/3_Components/_videoplayer.scss */
+/* line 161, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li {
   height: 10px;
   list-style: none;
@@ -13295,7 +13313,7 @@ nav.open {
   position: relative;
   width: 10px;
 }
-/* line 150, ../sass/3_Components/_videoplayer.scss */
+/* line 169, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li button {
   background: rgba(0, 0, 0, 0.5);
   border: none;
@@ -13309,20 +13327,20 @@ nav.open {
   top: 0;
   width: 10px;
 }
-/* line 162, ../sass/3_Components/_videoplayer.scss */
+/* line 181, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li button:hover {
   background: #000;
 }
-/* line 168, ../sass/3_Components/_videoplayer.scss */
+/* line 187, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li.slick-active, .video-player .video-controls .slick-dots li:hover {
   background: #000;
   outline: none;
 }
-/* line 174, ../sass/3_Components/_videoplayer.scss */
+/* line 193, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li:last-child {
   margin-right: 0;
 }
-/* line 180, ../sass/3_Components/_videoplayer.scss */
+/* line 199, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls {
   display: flex;
   margin: 0;
@@ -13330,7 +13348,7 @@ nav.open {
   position: relative;
   top: -5px;
 }
-/* line 187, ../sass/3_Components/_videoplayer.scss */
+/* line 206, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li {
   color: #000;
   font-size: 24px;
@@ -13338,34 +13356,40 @@ nav.open {
   list-style: none;
   margin-right: 15px;
 }
-/* line 193, ../sass/3_Components/_videoplayer.scss */
+/* line 212, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li:last-child {
   margin-right: 0;
 }
-/* line 195, ../sass/3_Components/_videoplayer.scss */
+/* line 214, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li a {
   color: #000;
   display: block;
   font-family: "icomoon";
 }
-/* line 200, ../sass/3_Components/_videoplayer.scss */
-.video-player .video-controls .controls li a:focus, .video-player .video-controls .controls li a:active, .video-player .video-controls .controls li a:hover {
+/* line 219, ../sass/3_Components/_videoplayer.scss */
+.video-player .video-controls .controls li a:hover {
   opacity: .5;
   outline: none;
   text-decoration: none;
 }
-/* line 213, ../sass/3_Components/_videoplayer.scss */
+/* line 225, ../sass/3_Components/_videoplayer.scss */
+.video-player .video-controls .controls li a:focus, .video-player .video-controls .controls li a:active {
+  opacity: 1;
+  outline: none;
+  text-decoration: none;
+}
+/* line 237, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls.disabled .controls {
   opacity: .3;
   cursor: not-allowed;
 }
 @media screen and (max-width: 767px) {
-  /* line 134, ../sass/3_Components/_videoplayer.scss */
+  /* line 153, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-controls {
     height: 75px;
     padding: 5px;
   }
-  /* line 223, ../sass/3_Components/_videoplayer.scss */
+  /* line 247, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-controls .controls {
     float: none;
     margin: 0 auto;
@@ -13373,7 +13397,7 @@ nav.open {
     top: 25px;
     width: 98px;
   }
-  /* line 230, ../sass/3_Components/_videoplayer.scss */
+  /* line 254, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-controls .slick-dots {
     justify-content: center;
     margin-top: -20px;
@@ -14068,7 +14092,7 @@ body.with-nav-open main {
 }
 /* line 99, ../sass/6_Pages/_contact.scss */
 .contact .contact-form.panes .pane.form .contact-form {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 @media screen and (max-width: 960px) {
   /* line 99, ../sass/6_Pages/_contact.scss */
