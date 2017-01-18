@@ -51,8 +51,8 @@ export default class extends VideoPlayer {
 		let infoTriggers = document.querySelectorAll('.' + this.infoClassTrigger);
 
 		// Hash Tag, subtracts '#'
-		let hash = window.location.hash ? window.location.hash.substr(1, 2) : null;
-		
+		let hash = window.location.hash ? window.location.hash.substr(1) : null;
+
 		// Sets click event on Item triggers "view project" button.
 		for(let x = 0; x < infoTriggers.length; ++x){
 			// Set click
@@ -87,10 +87,13 @@ export default class extends VideoPlayer {
 		// Drills from button > .inner > .caption > anchor > item container,
 		// this then finds ".item-info" el, clones it, and injects it into the item info container, id #workItemInfo
 		let itemInfo = e.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector('.item-info').cloneNode(true);
+		
 		// Video Url - Video Url that will be loaded in standalone player src
 		let videoUrl = e.currentTarget.dataset.videourl;
+		
 		// Poster Url - Poster that will be loaded in standalone player
 		let posterUrl = e.currentTarget.dataset.posterurl;
+		
 		// Video Id
 		let videoId = e.currentTarget.dataset.videoid;
 
@@ -110,9 +113,6 @@ export default class extends VideoPlayer {
 		// this.infoContainer.append(itemInfo);
 		$('#workItemInfo').append(itemInfo);
 		
-		// Slide Down
-		$(this.infoContainer).slideDown();
-
 		// Scroll offset
 		let offset = $(this.infoContainer).offset().top;
 
@@ -120,6 +120,13 @@ export default class extends VideoPlayer {
         $('html, body').animate({
           scrollTop: offset - 450
         }, 1000);
+
+
+		// Show Work Item Info
+		$(this.infoContainer).show();
+
+		// Slide Down
+		// $(this.infoContainer).slideDown();
 
 		// Close Button Click Event Setup
 		let closeButton = this.infoContainer.querySelector('.work-item-close');

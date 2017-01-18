@@ -16,7 +16,7 @@ export default class {
 		this.currentVideo = null;
 
 		// Does a video player exist?
-		if(document.querySelectorAll('.video-player')){
+		if(document.querySelectorAll('.video-player').length > 0){
 
 			// Video Player
 			this.videoPlayer = document.querySelector('.video-player')[0];
@@ -83,13 +83,14 @@ export default class {
 	};
 
 	loadVideo (videoUrl, posterUrl) {
-		console.log('video' + videoUrl);
-		console.log('poster' + posterUrl);
+	
 		// Load Video into Work Video Player
 		$('#standalonePlayer').attr('src', videoUrl).attr('poster', posterUrl);
+	
 		// Show Play Button
 		$('.video-container .play-btn').fadeIn();
-	}
+	
+	};
 
 	// Play Video on Play Button Click
 	playVideo (e) {
@@ -114,7 +115,6 @@ export default class {
 
 		};
 
-
 	};
 
 	// Restart Current Video
@@ -129,7 +129,7 @@ export default class {
 		// If video is playing, restart it
 		if(video){
 			video.currentTime = 0;
-		}
+		};
 
 	};
 
@@ -139,35 +139,34 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
-		let video = $('video.playing')[0];
-		
-		// If Current Video exists, pause or play it depending on condition
-		if(video && video.paused){
-		
-			// Play
-			// this.currentVideo.play();
-			video.play();
+		// Video
+		let video = $('.video-container video.playing')[0];
 
-			// Remove Play Icon
-			document.getElementById('pause').classList.remove('icon-play');
+		// If Current Video exists, pause or play it depending on condition
+		if(video && document.getElementById('pause').classList.contains('icon-pause')){
 			
-			// Add Pause Icon
-			document.getElementById('pause').classList.add('icon-pause');			
-		
-		} else if(video && !video.paused) {
-		
-			// Pause
-			// this.currentVideo.pause();
+			// Pause Video
 			video.pause();
 
 			// Remove Pause Icon
-			document.getElementById('pause').classList.remove('icon-pause');
+			$(e.currentTarget).removeClass('icon-pause');
 			
 			// Add Play Icon
-			document.getElementById('pause').classList.add('icon-play');			
+			$(e.currentTarget).addClass('icon-play');
+
+		} else if (video && e.currentTarget.classList.contains('icon-play')) {
+			
+			// Play Video
+			video.play();
+			
+			// Remove Play Icon
+			e.currentTarget.classList.remove('icon-play');
+			
+			// Add Pause Icon
+			e.currentTarget.classList.add('icon-pause');			
 		
 		};
-
+	
 	};
 
 	// Volume Current Video
@@ -175,6 +174,8 @@ export default class {
 
 		// Prevent Default
 		e.preventDefault();
+
+		console.log('volume? can you hear me now');
 
 		let video = $('video.playing')[0];
 		
@@ -206,11 +207,6 @@ export default class {
 		
 		};
 
-	};
-
-	// Load Work Item
-	loadWorkItem (e) {
-		e.preventDefault();
 	};
 
 };

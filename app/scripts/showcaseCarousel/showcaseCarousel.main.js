@@ -40,26 +40,11 @@ export default class extends VideoPlayer {
 		$(this.container).slick({
 			dots : true,
 			appendDots : $(this.dotsContainer),
-			autoplay : false,
-			autoplaySpeed : 5000,
+			autoplay : true,
+			autoplaySpeed : 4000,
 			cssEase : 'ease-in',
 			easing : 'ease-in'
 		});
-
-		// // Set Size of Carousel Based on Current Item
-		// var a = document.getElementById('heroCarousel');
-		// var b = document.querySelector('.slick-current');
-		
-		// // Set Hero Container Height
-		// a.style.height = b.getBoundingClientRect().height;
-
-		// // On Resize
-		// $(window).resize(function(){
-		// 	// Set Hero Container Height
-		// 	var a = document.getElementById('heroCarousel');
-		// 	var b = document.querySelector('.slick-current');
-		// 	a.style.height = b.getBoundingClientRect().height;
-		// });
 
 		// On Slice Change, Fire before, Handle video
 		$(this.container).on('beforeChange', function(){
@@ -70,7 +55,7 @@ export default class extends VideoPlayer {
 				// that.currentVideo.pause();
 
 				// Pause Video
-				let video = $('video.playing')[0];
+				let video = $('video')[0];
 
 				// Pause Video
 				video.pause();

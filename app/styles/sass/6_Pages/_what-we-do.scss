@@ -6,10 +6,18 @@
 	
 	.middle {
 		padding-bottom: 0;
-
-		strong {
+		.inner .scroll-cta {
+			margin: 0 auto;
+			padding: 35px;
 			text-align: center;
-		}
+			width: 66%;
+			@include max-screen(1450px){
+				width: 75%;
+			}
+			@include max-screen(1150px){
+				width: 100%;
+			}
+		} // End Scroll cta
 	} // End Middle
 	
 	.panel-table {
@@ -25,8 +33,7 @@
 			padding: 75px 45px;
 		}
 
-		.bottom-message,
-		.top-message {
+		.bottom-message {
 			margin-bottom: 70px;
 			width: 100%;
 
@@ -131,7 +138,7 @@
 			}
 
 			&:nth-child(even) {
-				padding-left: 0;
+				// padding-left: 0;
 			}
 
 			@include max-screen(845px){
@@ -234,15 +241,18 @@
 				left: 51.1%;
     			width: 1500px;
 		    }
-
-		    @include max-screen(768px){
+			@include max-screen(940px){
+			    top: -10px;
+			    left: 50.6%;
+			    width: 1100px;				
+			}
+		    @include max-screen(800px){
 		    	display: none;
 		    }
 		} // End Triangle SVG
 
 		.inner.gateway {
 		    position: absolute;
-		    width: 33%;
 		    text-align: center;
 		    left: 50%;
 		    top: 50px;
@@ -260,7 +270,11 @@
 		    }
 
 			@include max-screen(960px){
-				width: 66%;
+			    top: 25px;
+			}
+
+			@include max-screen(800px){
+    			width: 66%;
 			}
 
 		    @include max-screen(767px){

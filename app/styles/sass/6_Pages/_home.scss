@@ -17,7 +17,7 @@
 	
 	.work-grid {
 		margin-bottom: 0;
-	}
+	} // end work grid
 
 	.see-more-work {
 		min-height: 320px;
@@ -131,7 +131,12 @@
 								color: $black;
 							}
 						}
-					}
+						&:focus,
+						&:active {
+							text-decoration: none;
+						}
+					} // End Anchor
+					
 				} // end content
 
 
@@ -168,5 +173,13 @@
 			width: 100%;
 		}
 	} // end see work
+
+	.contact-us {
+		height: 450px;
+
+		.address {
+			margin: 100px auto 0 auto;
+		}
+	} // end contact us
 
 } // End Home

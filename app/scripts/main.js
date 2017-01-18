@@ -8,9 +8,6 @@ import Global from './Global/global.main';
 // Nav Functionality
 import Nav from './ResponsiveNav/ResponsiveNav.main';
 
-// SVG Length Finder
-import SvgLengthFinder from './Utility/svgLengthFinder';
-
 // Showcase Carousel
 import ShowCaseCarousel from './showcaseCarousel/showcaseCarousel.main';
 
@@ -30,10 +27,10 @@ document.addEventListener('DOMContentLoaded', function(){
 	const nav = new Nav(document.getElementsByTagName('nav'), document.querySelectorAll('.menu-trigger'), document.getElementById('menuClose'));
 	
 	// Work Item Info (Only fires if work item info container exists with id of workItemInfo)
-	var workItemInfo = new WorkItemInfo();
+	let workItemInfo = new WorkItemInfo();
 	
 	// Video Player
-	var videoPlayer = new VideoPlayer();
+	let videoPlayer = new VideoPlayer();
 
 	// Hero Carousel, To extend, Use else if statement to instantiate a new instance of
 	// the carousel with the id of your choice.

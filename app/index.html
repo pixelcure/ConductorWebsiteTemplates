@@ -45,18 +45,23 @@
                     <span class="block directors-toggle" title="Directors">Directors</span>
                     <ul class="dropdown-nav">
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Noah Lyndiard
+                            <a href="director-noah-lydiard.html" title="Noah Lydiard">
+                                Noah Lydiard
                             </a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                James Ferguson
+                            <a href="director-kamell-allaway.html" title="Kamell Allaway">
+                                Kamell Allaway
                             </a>
                         </li>
                         <li class="dropdown-item">
-                            <a href="directors.html" title="Noah Lyndiard">
-                                Michael Lavalongname
+                            <a href="director-vladimir-minuty.html" title="Vladimir Minuty">
+                                Vladimir Minuty
+                            </a>
+                        </li>                         
+                        <li class="dropdown-item">
+                            <a href="director-christian-williams.html" title="Christian Williams">
+                                Christian Williams
                             </a>
                         </li>                                                
                     </ul>
@@ -98,10 +103,7 @@
         <section class="hero video-player">
             <div class="hero-inner video-inner">
                 <div class="video-carousel" id="heroCarousel">
-                    <div class="item">
-                        <img src="images/home-river.jpg" alt="Charles River" />
-                    </div><!-- / end item -->
-                    <div class="item" class="video-outer" data-videourl="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119">
+                    <div class="item" class="video-outer">
                         <div class="video-container">
                             <span class="play-btn" title="Play">
                                 <span class="play"></span>
@@ -109,15 +111,48 @@
                             <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png" muted>
                             </video>
                         </div><!-- / end video container -->
-                    </div>
+                        <div class="hero-callout video-callout">
+                            <h2>
+                                We build 
+                                <span>commercials</span> and 
+                                <span>digital content</span>
+                            </h2>
+                            <a href="/what-we-do.html" class="button right" data-role="button" title="What We Do">Learn More</a>
+                        </div><!-- / end hero callout -->                        
+                    </div><!-- / end item -->                                        
+                    <div class="item" class="video-outer">
+                        <div class="video-container">
+                            <span class="play-btn" title="Play">
+                                <span class="play"></span>
+                            </span>
+                            <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png" muted>
+                            </video>
+                        </div><!-- / end video container -->
+                        <div class="hero-callout video-callout">
+                            <h2>
+                                Crazy about <span>creative</span>, obsessed with 
+                                <span>production value</span>
+                            </h2>
+                            <a href="/what-we-do.html" class="button right" data-role="button" title="What We Do">Learn More</a>
+                        </div><!-- / end hero callout -->                        
+                    </div><!-- / end item -->
+                    <div class="item" class="video-outer">
+                        <div class="video-container">
+                            <span class="play-btn" title="Play">
+                                <span class="play"></span>
+                            </span>
+                            <video id="standalonePlayer" class="video" src="https://player.vimeo.com/external/195377823.hd.mp4?s=43cc111c6b8bbfa274a937af239650b849806af1&profile_id=119" poster="/images/posters/thumbtack.png" muted>
+                            </video>
+                        </div><!-- / end video container -->
+                        <div class="hero-callout video-callout">
+                            <h2>
+                                <span>Discounts</span> 
+                                for any creative requiring pyrotechnics
+                            </h2>
+                            <a href="/what-we-do.html" class="button right" data-role="button" title="What We Do">Learn More</a>
+                        </div><!-- / end hero callout -->                        
+                    </div><!-- / end item -->                                                
                 </div><!-- / end video container -->                    
-                <div class="hero-callout video-callout">
-                    <h2>
-                        We are the <span>architects</span> and 
-                        <span>builders</span> of commercials that work
-                    </h2>
-                    <a href="/what-we-do.html" class="button right" data-role="button" title="What We Do">Learn More</a>
-                </div><!-- / end hero callout -->
             </div><!-- / end hero inner -->
             <div class="video-controls disabled" id="videoControls">
                 <!-- / end slide list -->
@@ -145,9 +180,9 @@
                 <div class="scroll-callout item">
                     <img src="images/arrow-down-callout.svg" alt="Backdrop" class="backdrop" />
                     <div class="content">
-                        <span>Scroll To See</span>
-                        <span>More Work</span>
-                        <a href="#" class="arrow">
+                        <span>For a good time</span>
+                        <span>scroll down</span>
+                        <a href="#" id="scrollDown" class="arrow">
                             <span class="icon icon-down-arrow"></span>
                         </a>
                     </div><!-- / end panel -->
@@ -315,9 +350,6 @@
         <section class="parallax office-image full-width">
             <!-- <img src="images/office-shot.jpg" alt="Office Shot" /> -->
         </section><!-- / end parallax full-width -->
-        <section class="office-location office-map homepage-office">
-            <div id="officeMap" data-markertitle="Conductor Productions" data-markericon="images/map-marker.svg" class="conductor-office map-container"></div>
-        </section><!-- / end office location map -->
         <section class="contact-us angled-callout">
             <div class="backdrop">
                 <svg viewBox="0 0 1442 577" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -325,8 +357,6 @@
                 </svg>                
             </div>
             <div class="inner-content">
-                <h1>Conveniently Located In</h1>
-                <h2>Downtown Boston</h2>
                 <div class="address">
                     <ul>
                         <li>
@@ -394,7 +424,7 @@
                         <a href="/our-work.html" title="Our Work">Our Work</a>
                     </li>
                     <li>
-                        <a href="/directors.html" title="Directors">Directors</a>
+                        <a href="/director-noah-lydiard.html" title="Directors">Directors</a>
                     </li>
                     <li>
                         <a href="/clients.html" title="Clients">Clients</a>
