@@ -14173,16 +14173,70 @@ body.with-nav-open main {
     padding-top: 0;
   }
 }
-/* line 21, ../sass/6_Pages/_directors.scss */
+/* line 22, ../sass/6_Pages/_directors.scss */
+.directors .middle {
+  padding: 35px 0px 0px 45px;
+}
+@media screen and (max-width: 960px) {
+  /* line 22, ../sass/6_Pages/_directors.scss */
+  .directors .middle {
+    padding: 0;
+  }
+}
+/* line 30, ../sass/6_Pages/_directors.scss */
+.directors .middle .inner {
+  float: left;
+  padding-right: 125px;
+  padding-bottom: 50px;
+  width: 66%;
+}
+@media screen and (max-width: 960px) {
+  /* line 30, ../sass/6_Pages/_directors.scss */
+  .directors .middle .inner {
+    width: 100%;
+    padding: 0 45px 45px;
+  }
+}
+/* line 43, ../sass/6_Pages/_directors.scss */
+.directors .middle .stills {
+  float: right;
+  width: 33%;
+}
+@media screen and (max-width: 960px) {
+  /* line 43, ../sass/6_Pages/_directors.scss */
+  .directors .middle .stills {
+    float: left;
+    width: 100%;
+  }
+}
+/* line 52, ../sass/6_Pages/_directors.scss */
+.directors .middle .stills .cell {
+  display: table;
+  float: left;
+  width: 50%;
+}
+@media screen and (max-width: 960px) {
+  /* line 52, ../sass/6_Pages/_directors.scss */
+  .directors .middle .stills .cell {
+    width: 25%;
+  }
+}
+@media screen and (max-width: 400px) {
+  /* line 52, ../sass/6_Pages/_directors.scss */
+  .directors .middle .stills .cell {
+    width: 50%;
+  }
+}
+/* line 69, ../sass/6_Pages/_directors.scss */
 .directors .work-outer {
   margin-bottom: 0;
 }
-/* line 25, ../sass/6_Pages/_directors.scss */
+/* line 73, ../sass/6_Pages/_directors.scss */
 .directors .work-grid {
   margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
-  /* line 28, ../sass/6_Pages/_directors.scss */
+  /* line 76, ../sass/6_Pages/_directors.scss */
   .directors .work-grid .work-type {
     text-align: center;
   }
