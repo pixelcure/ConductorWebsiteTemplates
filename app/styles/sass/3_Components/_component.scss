@@ -13,6 +13,92 @@
     width: 100px;
 }
 
+// Hero Carousel
+.hero-carousel {
+    bottom: 65px;	
+    height: 100%;
+    left: 0;
+	list-style-type: none;
+	padding: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+	
+	.slick-list,
+	.slick-track { height: 100%; }
+
+	.slick-arrow { display: none!important; }
+	
+	// Carousel Item
+	.item {
+	    cursor: move; // fallback: no `url()` support or images disabled
+	    cursor: url(images/grab.cur); // fallback: Internet Explorer
+	    cursor: -webkit-grab; // Chrome 1-21, Safari 4+
+	    cursor:    -moz-grab; // Firefox 1.5-26
+	    cursor:         grab; // W3C standards syntax, should come least				
+		outline: none;
+		overflow: hidden;
+		position: relative;
+	} // End Carousel Item
+
+} // End Video Carousel
+
+.hero-callout {
+	animation: 1s fadeDown linear;
+	animation-delay: 400ms;
+	animation-fill-mode: forwards;
+	opacity: 0;
+    bottom: 30px;
+	position: absolute;
+    right: 50px;
+    width: 33%;			
+    z-index: 100;
+
+    &:before {
+	    background: rgba(255, 255, 255, .3);
+	    content: '';
+	    height: 1500px;
+	    top: -200px;
+	    left: -175px;
+	    position: absolute;
+	    transform: rotate(45deg);
+	    width: 1900px;
+	    z-index: 100;
+    }
+    h2 {
+    	color: rgba(0, 0, 0, .5);
+    	font-size: 36px;
+    	font-size: 2.250em;
+    	font-family: $openSans;
+    	font-weight: 600;
+		letter-spacing: 1.15px;
+    	line-height: 1.5em;
+    	margin-bottom: 25px;
+    	text-align: right;
+    	position: relative;
+    	z-index: 120;
+    	span {
+    		color: $black;
+    	}
+    	@include max-screen(1050px){
+    		font-size: 24px;
+    	}
+    	@include max-screen(815px){
+    		font-size: 21px;
+    	}
+    }
+    a {
+		margin-right: 5px;
+		position: relative;
+		z-index: 120;
+    }
+	
+	@include max-screen(767px){
+		display: none;
+	}
+
+} // End Hero Callout
+
 // Menu Icon
 .menu-icon {
 	cursor: pointer;

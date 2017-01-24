@@ -124,11 +124,14 @@ export default class {
 		e.preventDefault();
 
 		// Video
-		let video = $('video.playing')[0] || null;
+		let video = document.getElementById('standalonePlayer');
 
 		// If video is playing, restart it
-		if(video){
+		if(video.classList.contains('playing')){
+			// Set time to 0 seconds
 			video.currentTime = 0;
+			// Play Videp
+			video.play();
 		};
 
 	};
@@ -139,33 +142,20 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
+		let btn = e.currentTarget;
+
 		// Video
-		let video = $('.video-container video.playing')[0];
+		let video = document.getElementById('standalonePlayer');
 
-		// If Current Video exists, pause or play it depending on condition
-		if(video && document.getElementById('pause').classList.contains('icon-pause')){
-			
-			// Pause Video
+		console.log(btn.classList.contains('icon-pause'));
+
+		if(btn.classList.contains('icon-pause') && video.classList.contains('playing')){
+			btn.classList.remove('icon-pause');
 			video.pause();
+			btn.classList.add('icon-play');
+		}
 
-			// Remove Pause Icon
-			$(e.currentTarget).removeClass('icon-pause');
-			
-			// Add Play Icon
-			$(e.currentTarget).addClass('icon-play');
 
-		} else if (video && e.currentTarget.classList.contains('icon-play')) {
-			
-			// Play Video
-			video.play();
-			
-			// Remove Play Icon
-			e.currentTarget.classList.remove('icon-play');
-			
-			// Add Pause Icon
-			e.currentTarget.classList.add('icon-pause');			
-		
-		};
 	
 	};
 
@@ -174,38 +164,15 @@ export default class {
 
 		// Prevent Default
 		e.preventDefault();
-
-		console.log('volume? can you hear me now');
-
-		let video = $('video.playing')[0];
 		
-		// If Current Video exists, mute or add volume depending on condition
-		if(video && video.muted){
-			
-			// Play Audio
-			// this.currentVideo.muted = false;
+		let btn = e.currentTarget;
+		
+		// Video
+		let video = document.getElementById('standalonePlayer');
+
+		if(btn.classList.contains('icon-sound') && video.classList.contains('playing')){
 			video.muted = false;
-
-			// Remove Muted Icon
-			document.getElementById('volume').classList.remove('icon-mute-video');
-			
-			// Add Sound Icon
-			document.getElementById('volume').classList.add('icon-sound');
-		
-		// } else if(this.currentVideo && !this.currentVideo.muted) {
-		} else if(video && !video.muted) {
-			
-			// Mute
-			// this.currentVideo.muted = true;
-			video.muted = true;
-
-			// Remove Sound Icon
-			document.getElementById('volume').classList.remove('icon-sound');
-			
-			// Add Muted Icon
-			document.getElementById('volume').classList.add('icon-mute-video');			
-		
-		};
+		}
 
 	};
 

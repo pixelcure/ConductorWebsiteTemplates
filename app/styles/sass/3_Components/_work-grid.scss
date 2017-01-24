@@ -25,13 +25,37 @@
 	} // End Work Type Label
 
 	&.instagrid {
+		bottom: -25px;
 		display: table;
+		padding-top: 25px;
+		position: relative;
+
+		ul {
+			bottom: -25px;
+			position: relative;
+			@include max-screen(768px){
+				bottom: 0;
+			}
+		}
+		
+		@include max-screen(960px){
+			padding-top: 0;
+		}
+
+		@include max-screen(768px){
+			bottom: 0;
+		}
+
 		.cell {
 			display: table;
 			float: left;
-			margin-right: 10px;
-			width: calc(25% - 10px);
+		    margin: 25px 0 25px 25px;
+		    width: calc(25% - 30px);
+			&:nth-child(-n+4) {
+				margin-bottom: 0;
+			}
 			@include max-screen(768px){
+				margin: 0;
 				width: 50%;
 			}
 			@include max-screen(767px){

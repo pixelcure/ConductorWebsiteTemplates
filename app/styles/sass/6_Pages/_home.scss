@@ -14,6 +14,31 @@
 }
 
 .home {
+
+	.title-header {
+		
+		.left {
+			height: 95px;
+		} // End Left Intro
+
+		i.page-name {
+			font-size: 28px;
+		} // End Page Name
+		
+		p {
+			animation-name: fadeIn;
+			animation-timing-function: ease-in-out;
+			animation-duration: 2000ms;
+			animation-delay: 1000ms;
+			animation-fill-mode: forwards;				
+			opacity: 0;
+		    color: #CCC;
+			font-size: 24px;
+		    font-weight: 100;
+		    margin-top: 5px;			
+		} // End Blurb
+
+	} // End Title Header
 	
 	.work-grid {
 		margin-bottom: 0;

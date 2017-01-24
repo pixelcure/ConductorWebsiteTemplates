@@ -20,7 +20,7 @@
 	}
 	
 	.middle {
-	    padding: 35px 0px 0px 45px;
+	    padding: 35px 45px 45px 45px;
 		
 		@include max-screen(960px){
 			padding: 0;
@@ -29,39 +29,38 @@
 		// Bio
 		.inner {
 			float: left;
-			padding-right: 125px;
-			padding-bottom: 50px;
-			width: 66%;
+			padding: 0 50px 50px 0;
+			width: 80%;
 			
+			.scroll-cta {
+				@include max-screen(1505px){
+					display: block;
+					padding: 15px;
+					text-align: center;
+				}
+			} // End Scroll CTA
+
 			@include max-screen(960px){
-				width: 100%;
+				display: table;
 				padding: 0 45px 45px;
+				width: 100%;
 			}
 
 		} // End Bio
-	
-		.stills {
-			float: right;
-			width: 33%;
+
+		.headshot {
+			width: 50%;
 
 			@include max-screen(960px){
-				float: left;
+				display: table;
 				width: 100%;
 			}
 
-			.cell {
-				display: table;
-				float: left;
-				width: 50%;
-				@include max-screen(960px){
-					width: 25%;
-				}
-				@include max-screen(400px){
-					width: 50%;
-				}
-			} // End Picture
+			img {
+				display: block;
+			}
 
-		} // End Stills
+		} // End Headshot
 
 	} // End Middle Bio / Pictures
 
