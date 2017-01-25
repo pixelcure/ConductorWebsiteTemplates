@@ -12782,7 +12782,7 @@ footer .footer-inner .company-info span a {
     margin: 10px 0 0;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 795px) {
   /* line 17, ../sass/3_Components/_footer.scss */
   footer .footer-inner .company-info {
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -12813,7 +12813,7 @@ footer .footer-inner .footer-nav {
     font-size: 0.875em;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 795px) {
   /* line 73, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav {
     display: block;
@@ -12827,7 +12827,7 @@ footer .footer-inner .footer-nav ul.social-media {
   padding: 0 0 0 20px;
   float: right;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 795px) {
   /* line 96, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav ul.social-media {
     float: none;
@@ -12852,43 +12852,75 @@ footer .footer-inner .footer-nav ul.social-media li a {
 footer .footer-inner .footer-nav ul.social-media li a:hover {
   text-decoration: none;
 }
-/* line 127, ../sass/3_Components/_footer.scss */
+/* line 124, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu {
   display: table;
   float: right;
   padding: 0;
 }
-@media screen and (max-width: 767px) {
-  /* line 127, ../sass/3_Components/_footer.scss */
+@media screen and (max-width: 795px) {
+  /* line 124, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav ul.menu {
     display: block;
     float: none;
     width: 100%;
   }
 }
-/* line 138, ../sass/3_Components/_footer.scss */
+/* line 135, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu li {
   display: table-cell;
   color: #FFF;
   list-style: none;
   padding-right: 10px;
 }
-/* line 143, ../sass/3_Components/_footer.scss */
+/* line 140, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu li:after {
   content: '|';
   color: #FFF;
   padding-left: 10px;
 }
-/* line 148, ../sass/3_Components/_footer.scss */
+/* line 145, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu li:last-child {
   padding-right: 0;
 }
-/* line 150, ../sass/3_Components/_footer.scss */
+/* line 147, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu li:last-child:after {
   content: '';
 }
-@media screen and (max-width: 767px) {
-  /* line 138, ../sass/3_Components/_footer.scss */
+@media screen and (max-width: 885px) {
+  /* line 151, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:after {
+    content: '|';
+    color: #FFF;
+    padding-left: 5px;
+  }
+  /* line 156, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:last-child {
+    padding-right: 0;
+  }
+  /* line 158, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:last-child:after {
+    content: '';
+  }
+}
+@media screen and (max-width: 800px) {
+  /* line 163, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:after {
+    content: '|';
+    color: #FFF;
+    padding-left: 4px;
+  }
+  /* line 168, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:last-child {
+    padding-right: 0;
+  }
+  /* line 170, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li:last-child:after {
+    content: '';
+  }
+}
+@media screen and (max-width: 795px) {
+  /* line 135, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav ul.menu li {
     display: table;
     margin-bottom: 15px;
@@ -12896,23 +12928,31 @@ footer .footer-inner .footer-nav ul.menu li:last-child:after {
     text-align: center;
     width: 100%;
   }
-  /* line 159, ../sass/3_Components/_footer.scss */
+  /* line 180, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav ul.menu li:after {
     display: none;
   }
 }
-/* line 164, ../sass/3_Components/_footer.scss */
+/* line 185, ../sass/3_Components/_footer.scss */
 footer .footer-inner .footer-nav ul.menu li a {
   color: #FFF;
   font-weight: 100;
   text-transform: uppercase;
   transition: .3s ease-in-out;
 }
-@media screen and (max-width: 767px) {
-  /* line 164, ../sass/3_Components/_footer.scss */
+@media screen and (max-width: 995px) {
+  /* line 185, ../sass/3_Components/_footer.scss */
+  footer .footer-inner .footer-nav ul.menu li a {
+    text-transform: auto;
+    text-transform: initial;
+  }
+}
+@media screen and (max-width: 795px) {
+  /* line 185, ../sass/3_Components/_footer.scss */
   footer .footer-inner .footer-nav ul.menu li a {
     display: block;
     text-align: center;
+    text-transform: uppercase;
     width: 100%;
   }
 }

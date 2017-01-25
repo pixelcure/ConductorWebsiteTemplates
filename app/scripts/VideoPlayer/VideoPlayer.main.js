@@ -65,6 +65,9 @@ export default class {
 		// Set events on all play button(s) (there could be more if multiple players in showcase carousel)
 		this.playBtn.addEventListener('click', this.playVideo);
 
+		// Handle videoplayer when a video ends
+		this.videoPlayer.addEventListener('ended', this.videoEnded.bind(this));
+
 		// Set events for Video Controls
 		// Expecting classes, #restart, #pause, #volume
 		this.controlsHandler();
@@ -85,10 +88,11 @@ export default class {
 	
 	};
 
+	// Load Video
 	loadVideo (videoUrl, posterUrl) {
 	
 		// Is the video paused? If it is, let's fix the control icon
-		if(!this.videoPlaying && this.pauseBtn.classList.contains('icon-play')){
+		if(this.pauseBtn.classList.contains('icon-play')){
 	
 			// Remove Play Control Button, Make it a Pause
 			this.pauseBtn.classList.remove('icon-play');
@@ -101,11 +105,8 @@ export default class {
 	
 		};
 
-		// Add Disabled Controls
-		this.controls.classList.add('disabled');
-
-		// Video no longer playing (if it was)
-		this.videoPlayer.classList.remove('playing');
+		// Force end video
+		this.videoEnded();
 
 		// Load Video
 		this.videoPlayer.src = videoUrl
@@ -141,6 +142,23 @@ export default class {
 			this.videoPlaying = true;			
 
 		};
+
+	};
+
+	// Video Ended
+	videoEnded (e) {
+		
+		// Video playing - false
+		this.videoPlaying = false;
+
+		// Remove 'playing' class
+		this.videoPlayer.classList.remove('playing');
+
+		// Show play btn ( to rewatch? )
+		this.playBtn.style.display = 'block';
+
+		// Disabled controls
+		this.controls.classList.add('disabled');
 
 	};
 
@@ -251,6 +269,6 @@ export default class {
 
 		};
 
-	};
+	}; // End Toggle Volume
 
-};
+}; // End Video Player
