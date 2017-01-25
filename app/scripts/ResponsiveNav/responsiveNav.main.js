@@ -1,4 +1,14 @@
+  ////////////////////////////////////////////////////
+ // Responsive Navigation ///////////////////////////
+////////////////////////////////////////////////////
+
+
+
+// Jquery
 import $ from 'jquery';
+
+// Controls opening/closing of navigation menu
+// Also applies some classes for subtle animation
 
 export default class {
 
@@ -33,9 +43,13 @@ export default class {
 
 		// On Resize Hide or show nav depending on viewport
 		$(window).resize(function() {
+			
+			// If greater or equal to 800
 			if( $(this).width() <= 800 ){
+				// Show nav
 				$(this.nav).show();
-			}
+			};
+
 		});
 
 		// On click, show or hide the menu (homepage menu trigger, sticky nav menu trigger)
@@ -43,6 +57,7 @@ export default class {
 			this.menuTrigger[x].addEventListener('click', this.menuToggle);
 		};
 
+		// Set click event on directors toggle
 		$(this.nav).find('.directors-toggle').on('click', this.directorsToggle);
 
 		// Click Event for Menu Close button
@@ -55,10 +70,13 @@ export default class {
 
 		// remove tranaslate fast 
 		$('main').removeClass('transition-fast');
+		
 		// add open class, show nav
 		$( this.nav ).addClass('open');
+		
 		// add body translate 3d effect
 		$(document.body).addClass('with-nav-open');	
+		
 		// default menu icon
 		$( this.menuTrigger ).addClass('open');
 		
@@ -79,29 +97,43 @@ export default class {
 
 		// default menu icon
 		$( this.menuTrigger ).removeClass('open');
+		
 		// Transition Fast
 		$('main').addClass('transition-fast')
+		
 		// remove body translate 3d nav open effect
 		$(document.body).removeClass('with-nav-open');
+		
 		// remove open class, hide nav
 		$( this.nav ).removeClass('open');
 
-
 		// Remove Animation To "Float" Items Up
 		for(let x = 0; x < this.navItems.length; ++x){
+			
+			// Remove comeUp class
 			this.navItems[x].classList.remove('comeUp');
-		}
+		
+		};
+
 	};
 
 	// Directors Toggle
 	directorsToggle (e) {
+
+		// Prevent Default
 		e.preventDefault();
+		
+		// Slide Toggle Directors Sub menu
 		$('nav .dropdown-nav').slideToggle();
+	
 	};
 
 	// Menu Toggle
 	menuToggle (e) {
+		
+		// If open, close, otherwise, close it
 		if( $( this.nav ).hasClass('open') ){
+		
 			// Now close menu
 			this.menuClose();
 
@@ -117,10 +149,7 @@ export default class {
 			this.menuOpen();
 
 		};
+	
 	};
+
 };
-
-
-			
-			
-

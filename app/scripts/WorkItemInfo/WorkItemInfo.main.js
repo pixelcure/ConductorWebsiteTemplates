@@ -2,9 +2,12 @@
  // Work Item Info ///////////////////////////
 //////////////////////////////////////////////
 
+
+
 // JQuery
 import $ from 'jquery';
 
+// Video Player
 import VideoPlayer from '../VideoPlayer/VideoPlayer.main.js';
 
 // This script controls the load of the #workItemInfo container

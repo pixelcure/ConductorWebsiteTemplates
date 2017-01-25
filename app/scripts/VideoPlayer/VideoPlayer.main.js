@@ -2,8 +2,7 @@
  // Work Item Info ///////////////////////////
 //////////////////////////////////////////////
 
-// Jquery
-import $ from 'jquery';
+
 
 // This script controls the load of the #workItemInfo container
 // Loads each Item's information, along with the video into the video player.
@@ -15,20 +14,35 @@ export default class {
 		// Current Video Player
 		this.currentVideo = null;
 
+		// Video Playing?
+		this.videoPlaying = false;
+
+		// Volume on?
+		this.volume = true;
+
 		// Does a video player exist?
 		if(document.querySelectorAll('.video-player').length > 0){
 
 			// Video Player
-			this.videoPlayer = document.querySelector('.video-player')[0];
+			this.videoPlayer = document.querySelector('#standalonePlayer');
 
 			// Work Item Class for click event
-			this.playBtn = document.querySelectorAll('.video-player .play-btn');
+			this.playBtn = document.querySelector('.video-player .play-btn');
+
+			// Pause Button
+			this.pauseBtn = document.querySelector('#pause');
+
+			// Volume Button
+			this.volumeBtn = document.querySelector('#volume');
 
 			// Controls
 			this.controls = document.getElementById('videoControls');
 			
 			// Bind This to control handlers - toggleRestart
-			this.toggleRestart = this.toggleRestart.bind(this);
+			this.toggleRestart = this.toggleRestart.bind(this);			
+
+			// Bind This to control handlers - playVideo
+			this.playVideo = this.playVideo.bind(this);
 			
 			// Bind This to control handlers - togglePause
 			this.togglePause = this.togglePause.bind(this);
@@ -49,23 +63,12 @@ export default class {
 		let that = this;
 
 		// Set events on all play button(s) (there could be more if multiple players in showcase carousel)
-		this.playButtonClickHandler(this.playBtn);
+		this.playBtn.addEventListener('click', this.playVideo);
 
 		// Set events for Video Controls
 		// Expecting classes, #restart, #pause, #volume
 		this.controlsHandler();
 		
-	};
-
-	// Set Play Button Click Event Handlers
-	playButtonClickHandler(array){
-		
-		// For All Play Buttons (It's possible for more than 1)
-		for(let x = 0; x < array.length; ++x){
-			// Add click event to playVideo method
-			array[x].addEventListener('click', this.playVideo);
-		};
-
 	};
 
 	// Controls Click Event Handlers
@@ -84,34 +87,58 @@ export default class {
 
 	loadVideo (videoUrl, posterUrl) {
 	
-		// Load Video into Work Video Player
-		$('#standalonePlayer').attr('src', videoUrl).attr('poster', posterUrl);
+		// Is the video paused? If it is, let's fix the control icon
+		if(!this.videoPlaying && this.pauseBtn.classList.contains('icon-play')){
+	
+			// Remove Play Control Button, Make it a Pause
+			this.pauseBtn.classList.remove('icon-play');
+	
+			// Add Pause Class
+			this.pauseBtn.classList.add('icon-pause');
+	
+			// Video now playing
+			this.videoPlaying = false;
+	
+		};
+
+		// Add Disabled Controls
+		this.controls.classList.add('disabled');
+
+		// Video no longer playing (if it was)
+		this.videoPlayer.classList.remove('playing');
+
+		// Load Video
+		this.videoPlayer.src = videoUrl
+
+		// Load Poster
+		this.videoPlayer.poster = posterUrl;
 	
 		// Show Play Button
-		$('.video-container .play-btn').fadeIn();
+		this.playBtn.style.display = 'block';
 	
+
 	};
 
 	// Play Video on Play Button Click
 	playVideo (e) {
 
-		// Update Current Video
-		this.currentVideo = e.target.parentElement.querySelectorAll('.video')[0];
-
 		// Only play video if there is a source
-		if(this.currentVideo.getAttribute('src')){
+		if(this.videoPlayer.getAttribute('src')){
+			
 			// Playing
-			this.currentVideo.classList.add('playing');
+			this.videoPlayer.classList.add('playing');
 
 			// Remove Disabled Controls
-			// this.controls.classList.remove('disabled');
-			$('#videoControls').removeClass('disabled');
+			this.controls.classList.remove('disabled');
 
 			// Hide Play Button
 			e.currentTarget.style.display = 'none';
 
 			// Play Video
-			this.currentVideo.play();
+			this.videoPlayer.play();
+
+			// Video Playing
+			this.videoPlaying = true;			
 
 		};
 
@@ -123,16 +150,30 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
-		// Video
-		let video = document.getElementById('standalonePlayer');
-
 		// If video is playing, restart it
-		if(video.classList.contains('playing')){
+		if(this.videoPlayer.classList.contains('playing')){
+			
 			// Set time to 0 seconds
-			video.currentTime = 0;
+			this.videoPlayer.currentTime = 0;
+
+			// Is the video paused? If it is, let's fix the control icon
+			if(!this.videoPlaying && this.pauseBtn.classList.contains('icon-play')){
+		
+				// Remove Play Control Button, Make it a Pause
+				this.pauseBtn.classList.remove('icon-play');
+		
+				// Add Pause Class
+				this.pauseBtn.classList.add('icon-pause');
+		
+				// Video now playing
+				this.videoPlaying = true;
+		
+			};
+
 			// Play Videp
-			video.play();
-		};
+			this.videoPlayer.play();
+
+		}; // End if playing
 
 	};
 
@@ -142,21 +183,36 @@ export default class {
 		// Prevent Default
 		e.preventDefault();
 
-		let btn = e.currentTarget;
+		if(this.videoPlaying && this.videoPlayer.classList.contains('playing')){
+			
+			// Pause Video
+			this.videoPlayer.pause();
+			
+			// Remove pause icon
+			this.pauseBtn.classList.remove('icon-pause');
+			
+			// Make a play icon on pause button
+			this.pauseBtn.classList.add('icon-play')
+			
+			// Video Playing now false
+			this.videoPlaying = false;
+		
+		} else if(this.videoPlayer.classList.contains('playing')) {
+			
+			// Video play
+			this.videoPlayer.play();
+			
+			// Remove icon play, make pause button
+			this.pauseBtn.classList.remove('icon-play');
+			
+			// Add pause icon
+			this.pauseBtn.classList.add('icon-pause');
+			
+			// Video is now playing
+			this.videoPlaying = true;
 
-		// Video
-		let video = document.getElementById('standalonePlayer');
+		};
 
-		console.log(btn.classList.contains('icon-pause'));
-
-		if(btn.classList.contains('icon-pause') && video.classList.contains('playing')){
-			btn.classList.remove('icon-pause');
-			video.pause();
-			btn.classList.add('icon-play');
-		}
-
-
-	
 	};
 
 	// Volume Current Video
@@ -164,15 +220,36 @@ export default class {
 
 		// Prevent Default
 		e.preventDefault();
-		
-		let btn = e.currentTarget;
-		
-		// Video
-		let video = document.getElementById('standalonePlayer');
 
-		if(btn.classList.contains('icon-sound') && video.classList.contains('playing')){
-			video.muted = false;
-		}
+		if(this.volume && this.videoPlayer.classList.contains('playing')){
+			
+			// Mute Video
+			this.videoPlayer.muted = true;
+
+			// Remove sound icon on Volume Button
+			this.volumeBtn.classList.remove('icon-sound');
+			
+			// Mute icon
+			this.volumeBtn.classList.add('icon-mute-video');
+
+			// No more volume, false
+			this.volume = false;
+
+		} else if (this.videoPlayer.classList.contains('playing')) {
+
+			// Mute Video
+			this.videoPlayer.muted = false;
+
+			// Remove sound icon on Volume Button
+			this.volumeBtn.classList.remove('icon-mute-video');
+			
+			// Mute icon
+			this.volumeBtn.classList.add('icon-sound');
+
+			// Creating volume, true
+			this.volume = true;			
+
+		};
 
 	};
 
