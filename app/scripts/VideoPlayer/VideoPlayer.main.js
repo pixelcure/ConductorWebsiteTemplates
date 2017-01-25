@@ -116,8 +116,7 @@ export default class {
 	
 		// Show Play Button
 		this.playBtn.style.display = 'block';
-	
-
+		
 	};
 
 	// Play Video on Play Button Click

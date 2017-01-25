@@ -23,6 +23,9 @@ export default class extends VideoPlayer {
 		// Toggle Work Item Method
 		this.toggleWorkItem = this.toggleWorkItem.bind(this);
 
+		// Work item info being used?
+		this.itemInfoEnabled = false;
+
 		// Work Item Close
 		this.workItemClose = this.workItemClose.bind(this);		
 	
@@ -37,6 +40,17 @@ export default class extends VideoPlayer {
 
 			// Init
 			this.setStage();
+
+			// We are using an item info container
+			this.itemInfoEnabled = true;
+
+		} else if (document.getElementById('workGrid')){
+			
+			// Work Item Class for click event
+			this.infoClassTrigger = 'item'
+
+			// Init
+			this.setStage();		
 
 		};
 
@@ -86,19 +100,14 @@ export default class extends VideoPlayer {
 		// Prevent Default
 		e.preventDefault();
 
-		// Item Info,
-		// Drills from button > .inner > .caption > anchor > item container,
-		// this then finds ".item-info" el, clones it, and injects it into the item info container, id #workItemInfo
-		let itemInfo = e.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector('.item-info').cloneNode(true);
-		
-		// Video Url - Video Url that will be loaded in standalone player src
-		let videoUrl = e.currentTarget.dataset.videourl;
-		
 		// Poster Url - Poster that will be loaded in standalone player
 		let posterUrl = e.currentTarget.dataset.posterurl;
 		
 		// Video Id
 		let videoId = e.currentTarget.dataset.videoid;
+
+		// Video Url - Video Url that will be loaded in standalone player src
+		let videoUrl = e.currentTarget.dataset.videourl;
 
 		// Set Hashtag
 		window.location.hash = videoId;
@@ -106,36 +115,55 @@ export default class extends VideoPlayer {
 		// Load Video;
 		this.loadVideo(videoUrl, posterUrl);
 
-		// Hide Work Item Info Container
-		this.infoContainer.style.display = 'none';
+		// If item info exists, load the content
+		if(this.itemInfoEnabled){
 
-		// Remove Children
-		$(this.infoContainer.children).remove();
+			// Item Info,
+			// Drills from button > .inner > .caption > anchor > item container,
+			// this then finds ".item-info" el, clones it, and injects it into the item info container, id #workItemInfo
+			let itemInfo = e.currentTarget.parentNode.parentNode.parentNode.parentNode.querySelector('.item-info').cloneNode(true);
+			
+			// Hide Work Item Info Container
+			this.infoContainer.style.display = 'none';
 
-		// Append itemInfo
-		// this.infoContainer.append(itemInfo);
-		$('#workItemInfo').append(itemInfo);
-		
-		// Scroll offset
-		let offset = $(this.infoContainer).offset().top;
+			// Remove Children
+			$(this.infoContainer.children).remove();
 
-		// Animate to Item Info
-        $('html, body').animate({
-          scrollTop: offset - 450
-        }, 1000);
+			// Append itemInfo
+			// this.infoContainer.append(itemInfo);
+			$('#workItemInfo').append(itemInfo);
 
+			// Scroll offset
+			let offset = $(this.infoContainer).offset().top;
 
-		// Show Work Item Info
-		$(this.infoContainer).show();
+			// Animate to Item Info
+	        $('html, body').animate({
+	          scrollTop: offset - 450
+	        }, 1000);
 
-		// Slide Down
-		// $(this.infoContainer).slideDown();
+			// Show Work Item Info
+			$(this.infoContainer).show();
 
-		// Close Button Click Event Setup
-		let closeButton = this.infoContainer.querySelector('.work-item-close');
+			// Slide Down
+			// $(this.infoContainer).slideDown();
 
-		// On close Button Click
-		closeButton.addEventListener('click', this.workItemClose);
+			// Close Button Click Event Setup
+			let closeButton = this.infoContainer.querySelector('.work-item-close');
+
+			// On close Button Click
+			closeButton.addEventListener('click', this.workItemClose);
+			
+		} else {
+
+			// Scroll offset
+			let offset = $(this.videoPlayer).offset().top;
+
+			// Animate to Item Info
+	        $('html, body').animate({
+	          scrollTop: offset
+	        }, 1000);		
+
+		}
 
 	};
 
