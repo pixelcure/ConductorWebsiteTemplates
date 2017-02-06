@@ -36,6 +36,7 @@ nav {
 	    padding: 10px;
 	    position: absolute;
 	    right: 0;
+        line-height: .8em;
 	    text-align: center;
 	    top: 50px;
 	    width: 50px;
@@ -46,7 +47,7 @@ nav {
 		    height: 50px;
 		    position: absolute;
 		    right: -50px;
-		    top: 0;
+		    top: 0px;
 		    transform-origin: right;
 		    transition: 300ms cubic-bezier(0.4, 0, 0.75, 0.64);
 		    width: 0;

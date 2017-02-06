@@ -4,6 +4,19 @@
 
 .clients {
 
+	.intro {
+	    margin-bottom: 25px;
+
+	    h2 {
+			color: $black;	
+		    font-size: 36px;
+		    font-size: 2.250em;			
+		    font-weight: 100;
+		    letter-spacing: auto;
+		    letter-spacing: initial;
+	    }
+	} // End Intro
+
 	.testimonials {
 		padding: 0 45px;
 		.cell {
@@ -21,7 +34,20 @@
 	} // End Testimonials
 
 	.middle {
-		padding-top: 10px;
+		padding: 10px 0 25px 50px;
+		.inner h2 {
+			color: $black;
+		    font-size: 36px;
+		    font-size: 2.250em;
+		    font-weight: 100;
+		    margin-bottom: 25px;
+		    letter-spacing: auto;
+		    letter-spacing: initial;	
+		    @include max-screen(767px){
+		    	text-align: center;
+		    }	
+		}
+
 	}
 
 	.clients-grid {

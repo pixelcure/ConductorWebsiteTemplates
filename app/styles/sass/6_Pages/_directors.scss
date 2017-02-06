@@ -10,6 +10,10 @@
 	    }
 	}	
 
+	.social-outer {
+		height: 225px;		
+	}
+
 	@include max-screen(768px){
 		.middle {
 			.tighten {
@@ -29,38 +33,18 @@
 		// Bio
 		.inner {
 			float: left;
-			padding: 0 50px 50px 0;
-			width: 80%;
-			
-			.scroll-cta {
-				@include max-screen(1505px){
-					display: block;
-					padding: 15px;
-					text-align: center;
-				}
-			} // End Scroll CTA
 
 			@include max-screen(960px){
 				display: table;
 				padding: 0 45px 45px;
 				width: 100%;
 			}
+			
+			h2 {
+				margin-top: 0;
+			}
 
 		} // End Bio
-
-		.headshot {
-			width: 50%;
-
-			@include max-screen(960px){
-				display: table;
-				width: 100%;
-			}
-
-			img {
-				display: block;
-			}
-
-		} // End Headshot
 
 	} // End Middle Bio / Pictures
 

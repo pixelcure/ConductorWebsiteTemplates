@@ -16,15 +16,7 @@
 .home {
 
 	.title-header {
-		
-		.left {
-			height: 95px;
-		} // End Left Intro
-
-		i.page-name {
-			font-size: 28px;
-		} // End Page Name
-		
+		.page-name { text-transform: none; }		
 		p {
 			animation-name: fadeIn;
 			animation-timing-function: ease-in-out;
@@ -32,10 +24,9 @@
 			animation-delay: 1000ms;
 			animation-fill-mode: forwards;				
 			opacity: 0;
-		    color: #CCC;
-			font-size: 24px;
-		    font-weight: 100;
-		    margin-top: 5px;			
+		    color: #666;
+			font-size: 14px;
+		    font-weight: 100;			
 		} // End Blurb
 
 	} // End Title Header
@@ -54,9 +45,19 @@
 			min-height: 200px;
 		}
 
+		.container {
+		    width: 75%;
+		    text-align: center;
+		    margin: 0 auto;
+		    border-bottom: 1px solid #000;
+		    padding: 25px 0;			
+		}
+
 		.callouts {
 			display: table;
 			position: relative;
+			overflow: hidden;
+		    height: 325px;
 			width: 100%;
 			z-index: 10;
 

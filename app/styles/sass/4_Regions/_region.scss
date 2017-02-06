@@ -30,10 +30,8 @@
 	
 	.inner {
 		h2 {
-			font-size: 36px;
-			font-size: 2.250em;
+			font-size: 24px;
 			font-weight: 100;
-			// margin-bottom: 45px;
 			margin-bottom: 25px;
 		}
 		p {
@@ -57,8 +55,7 @@
 			background: $black;
 			color: $white;
 			font-weight: 100;
-			font-size: 26px;
-			font-size: 1.625em;
+			font-size: 18px;
 		    line-height: 1.3em;
 			padding: 2px 15px;
 			margin: 30px 0 0 0;
@@ -79,7 +76,9 @@
 
 // Common Intro Header
 .intro {
-	margin: 45px 50px 45px 50px;
+	// margin: 45px 50px 45px 50px;
+	margin: 25px 50px 25px 50px;
+	
 	h2 {
 		color: rgba(0, 0, 0, 1);
 		margin: 0;
@@ -190,19 +189,28 @@
 	}
 
 	.social-media {
+		display: flex;
 		@extend .panel-table;
 	    margin: 25px auto 50px;
 	    overflow: hidden;
 	    padding: 0;
+	    justify-content: center;
 	    width: 250px;
 
 		li {
 			display: table;
-		    float: left;
 		    font-size: 48px;
-		    margin-right: 50px;
+		    margin-right: 10px;
 		    &:last-child {
 		    	margin-right: 0;
+		    }
+		    a {
+		    	&:focus,
+		    	&:hover,
+		    	&:active, {
+		    		outline: none;
+		    		text-decoration: none;
+		    	}
 		    }
 		}
 

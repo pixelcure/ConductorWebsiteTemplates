@@ -67,7 +67,7 @@
     }
     h2 {
     	color: rgba(0, 0, 0, .5);
-    	font-size: 36px;
+    	font-size: 18px;
     	font-size: 2.250em;
     	font-family: $openSans;
     	font-weight: 600;
@@ -81,10 +81,10 @@
     		color: $black;
     	}
     	@include max-screen(1050px){
-    		font-size: 24px;
+    		font-size: 16px;
     	}
     	@include max-screen(815px){
-    		font-size: 21px;
+    		font-size: 14px;
     	}
     }
     a {
@@ -109,10 +109,10 @@
 	small {
 		color: $white;
 		display: block;
-		font-size: 13px;
+		font-size: 12px;
 	    float: left;
 	    height: 100%;
-	    font-weight: 200;
+	    font-weight: 100;
 	    margin: 5px 0 0 -55px;
 	    padding-top: 2px;
 		text-shadow: 1px 1px 1px $black;
@@ -213,8 +213,7 @@
 // Title Header
 .title-header {
 	height: 135px;
-	overflow: hidden;
-	padding-left: 50px;
+	// overflow: hidden;
 	position: relative;
 
 	@include max-screen(768px){
@@ -226,9 +225,13 @@
 	}
 
 	.left {
-	    height: 45px;
-	    margin: 45px 25px 0 0;
-	    overflow: hidden;
+		border-top: 1px solid #000;
+    	border-bottom: 1px solid #000;		
+	    height: 100px;
+        margin: 18px 0 0 0;
+        padding: 25px 0 0 50px;
+	    position: relative;
+        width: calc(100% - 250px);
 
 		@include max-screen(768px){
 			margin: 25px 25px 0 0;
@@ -236,22 +239,18 @@
 
 		h1 {
 			color: $black;
-			font-size: 42px;
-			font-size: 2.625em;
+			font-size: 24px;
 			letter-spacing: 0.07px;
-			line-height: 43px;
+			line-height: 1.5em;
 		    margin: 0 auto;
 			text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
 
 			@include max-screen(1000px){
-			    font-size: 32px;
-    			font-size: 2em;
+			    font-size: 18px;
 			}
 
 			@include max-screen(767px){
     			line-height: 35px;
-    			font-size: 36px;
-    			font-size: 2em;
 			}
 
 			@include max-screen(745px){
@@ -313,6 +312,18 @@
 			}			
 		}
 
+		&:after {
+		    content: '';
+		    width: 70px;
+		    height: 70px;
+		    border-top: 1px solid black;
+		    border-right: 1px solid black;
+		    position: absolute;
+		    right: -36px;
+		    transform: rotate(45deg);
+		    top: 14px;		
+		}
+
 	} // End Left Title Bar
 
 	.menu-icon {
@@ -368,11 +379,26 @@
 
 	&.inner-page {
 		border-bottom: 1px solid rgba(0, 0, 0, .05);
-		height: 95px;
-		
+	    height: 95px;
+	    overflow: hidden;	
+	    
+	    &.pull {
+	    	margin-bottom: -5px;	
+	    }
+
 		.left {
-			margin: 25px 25px 0 0;
-			
+			padding: 7px 0 0 25px;
+			margin: 23px 25px 0 0;
+			height: 50px;
+			width: calc(100% - 225px);
+
+			&:after {
+			    width: 35px;
+			    height: 35px;
+			    right: -18px;
+			    top: 7px;				
+			}
+
 			h1 {
 				font-family: $openSans;
 				font-size: 26px;

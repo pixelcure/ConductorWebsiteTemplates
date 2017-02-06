@@ -71,18 +71,19 @@
 	} // Ends Stills
 
 	.grid-row {
-		padding: 0;
-		margin: 0;
+		padding: 0 25px 0 0;
 		overflow: hidden;
 		transition: .3s ease-in-out;
 		width: 100%;
+		margin-bottom: -25px;
 
 		.item {
 			display: table;
 			float: left;
 			position: relative;
 			overflow: hidden;
-			width: 50%;
+			width: 33.35%;
+			padding: 0 0 25px 25px;
 
 			.item-info {
 				display: none;
@@ -118,6 +119,8 @@
 				}
 			}
 
+			a { position: relative; overflow: hidden; }
+
 			.caption {
 			    background: rgba(0, 0, 0, 0.6);	
 			    border: 5px solid rgba(25, 26, 26, 0.3);
@@ -139,7 +142,7 @@
 					opacity: 0;
 					position: absolute;
 					top: 50%;
-					@include transform(translateY(150px));
+					@include transform(translateY(75px));
 					transition: .5s;
 					width: 100%;
 
@@ -172,15 +175,13 @@
 							color: $white;
 							font-family: $openSans;
 							font-weight: 600;
-							font-size: 36px;
-							font-size: 2.250em;
+							font-size: 18px;
 							margin-bottom: 10px;
 							text-align: center;
 							text-shadow: 1px 2px 1px rgba(0,0,0,0.50);
 							@include max-screen(768px){
 							    float: right;
-							    font-size: 21px;
-							    font-size: 1.313em;
+							    font-size: 18px;
 							    font-weight: 100;
 							    margin-right: 25px;
 							    padding-top: 15px;
@@ -189,9 +190,7 @@
 
 				    	&.description {
 				    		color: $white;
-							font-family: OpenSans;
-							font-size: 20px;
-							font-size: 1.250em;
+							font-size: 14px;
 							letter-spacing: 1.48px;
 							margin-bottom: 25px;
 						    text-align: center;

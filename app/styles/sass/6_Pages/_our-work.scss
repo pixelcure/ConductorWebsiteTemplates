@@ -6,29 +6,15 @@
 
 	.middle {
 		&.work-intro {
-		    background: rgba(0, 0, 0, .05);
-		    border-top: 1px solid rgba(0, 0, 0, .1);
-		    padding: 45px;
+		    padding: 0 45px;
+		    margin-bottom: 50px;
 
 		    .inner {
-		    	h2 {
-    				margin: 0;
-    				@include max-screen(768px){
-    					font-size: 23px;
-    					font-size: 1.438em;
-    				}
-    				@include max-screen(767px){
+		    	margin: 0 auto;
+		    	width: 66%;
 
-    					font-size: 21px;
-    					font-size: 1.313em;
-    					span {
-    						display: block;
-    					}
-    				}
-		    	}
-		    	em {
-	    		    display: block;
-    				margin-top: 35px;
+		    	p {
+					text-align: center;
 		    	}
 		    } // End Inner
 
@@ -104,7 +90,9 @@
 	.work-item-info {
 		background: $black;
 		color: $white;
+		display: none;
 		position: relative;
+		margin-bottom: 50px;
 		
 		.item-info {
 			padding: 50px 50px 75px;
@@ -130,7 +118,7 @@
 			    height: 50px;
 			    position: absolute;
 			    right: -50px;
-			    top: 0;
+			    top: 13px;
 			    transform-origin: right;
 			    transition: 300ms cubic-bezier(0.4, 0, 0.75, 0.64);
 			    width: 0;
