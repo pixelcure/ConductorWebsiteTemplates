@@ -14,6 +14,9 @@
 		    font-weight: 100;
 		    letter-spacing: auto;
 		    letter-spacing: initial;
+		    @include max-screen(767px){
+		    	text-align: left;
+		    }
 	    }
 	} // End Intro
 
@@ -44,13 +47,14 @@
 		    letter-spacing: auto;
 		    letter-spacing: initial;	
 		    @include max-screen(767px){
-		    	text-align: center;
+		    	text-align: left;
 		    }	
 		}
 
 	}
 
 	.clients-grid {
+
 		ul {
 			@extend  .clean;
 
@@ -70,13 +74,17 @@
 					position: absolute;
 				    top: 50%;
 				    transform: translate(-50%, -50%);
-				    width: 66%;
+				    width: 50%;
 				    @include max-screen(767px){
 						display: block;
 						margin: 50px auto 50px;
 			    		position: static;
 						transform: none;
 				    }
+				}
+
+				&.bulbhead {
+					img { width: 25%; }
 				}
 
 				@include max-screen(960px){

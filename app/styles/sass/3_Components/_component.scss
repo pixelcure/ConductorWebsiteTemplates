@@ -113,7 +113,7 @@
 	    float: left;
 	    height: 100%;
 	    font-weight: 100;
-	    margin: 5px 0 0 -55px;
+	    margin: 7px 0 0 -55px;
 	    padding-top: 2px;
 		text-shadow: 1px 1px 1px $black;
 	    text-transform: uppercase;
@@ -218,10 +218,6 @@
 
 	@include max-screen(768px){
 		height: 90px;
-	}
-
-	@include max-screen(400px){
-		padding-left: 25px;
 	}
 
 	.left {
@@ -336,7 +332,7 @@
 	    top: 50px;	
 	    
 	    @include max-screen(768px){
-	    	top: 30px;
+	    	top: 35px;
 			height: 25px;
 	    }
 
@@ -355,7 +351,7 @@
 			font-style: normal;
 			@include max-screen(768px){
 				font-size: 10px;
-    			margin: 0 0 0 -45px;
+    			margin: 4px 0 0 -45px;
 			}
 			@include max-screen(400px){
 				display: none;
@@ -391,6 +387,15 @@
 			margin: 23px 25px 0 0;
 			height: 50px;
 			width: calc(100% - 225px);
+
+			@include max-screen(768px){
+				width: calc(100% - 195px);
+			}
+
+			@include max-screen(400px){
+				padding: 7px 0 0 10px;
+				width: calc(100% - 150px);
+			}
 
 			&:after {
 			    width: 35px;
@@ -458,6 +463,9 @@
 
 		.menu-icon {
 			top: 30px;
+			@include max-screen(767px){
+				top: 35px;				
+			}
 		} // End Menu Icon
 	} // End Inner Page Title
 

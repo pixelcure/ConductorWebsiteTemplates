@@ -79,6 +79,10 @@
 	.video-controls {
 		margin-bottom: 40px;
 
+		@include max-screen(767px){
+			margin-bottom: 0;
+		}
+		
 		.controls.right {
 			@include max-screen(767px){
 	    		top: 15px;
