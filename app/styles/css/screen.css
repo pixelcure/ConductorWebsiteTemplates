@@ -13445,7 +13445,13 @@ nav.open {
   margin: 0;
   padding: 0;
 }
-/* line 92, ../sass/3_Components/_videoplayer.scss */
+@media screen and (max-width: 767px) {
+  /* line 88, ../sass/3_Components/_videoplayer.scss */
+  .video-player .video-controls .slick-dots {
+    display: none !important;
+  }
+}
+/* line 97, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li {
   height: 10px;
   list-style: none;
@@ -13454,7 +13460,7 @@ nav.open {
   position: relative;
   width: 10px;
 }
-/* line 100, ../sass/3_Components/_videoplayer.scss */
+/* line 105, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li button {
   background: rgba(0, 0, 0, 0.5);
   border: none;
@@ -13468,20 +13474,20 @@ nav.open {
   top: 0;
   width: 10px;
 }
-/* line 112, ../sass/3_Components/_videoplayer.scss */
+/* line 117, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li button:hover {
   background: #000;
 }
-/* line 118, ../sass/3_Components/_videoplayer.scss */
+/* line 123, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li.slick-active, .video-player .video-controls .slick-dots li:hover {
   background: #000;
   outline: none;
 }
-/* line 124, ../sass/3_Components/_videoplayer.scss */
+/* line 129, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .slick-dots li:last-child {
   margin-right: 0;
 }
-/* line 130, ../sass/3_Components/_videoplayer.scss */
+/* line 135, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls {
   display: flex;
   margin: 0;
@@ -13489,7 +13495,7 @@ nav.open {
   position: relative;
   top: -5px;
 }
-/* line 137, ../sass/3_Components/_videoplayer.scss */
+/* line 142, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li {
   color: #000;
   font-size: 24px;
@@ -13497,29 +13503,29 @@ nav.open {
   list-style: none;
   margin-right: 15px;
 }
-/* line 143, ../sass/3_Components/_videoplayer.scss */
+/* line 148, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li:last-child {
   margin-right: 0;
 }
-/* line 145, ../sass/3_Components/_videoplayer.scss */
+/* line 150, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li a {
   color: #000;
   display: block;
   font-family: "icomoon";
 }
-/* line 150, ../sass/3_Components/_videoplayer.scss */
+/* line 155, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li a:hover {
   opacity: .5;
   outline: none;
   text-decoration: none;
 }
-/* line 156, ../sass/3_Components/_videoplayer.scss */
+/* line 161, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls .controls li a:focus, .video-player .video-controls .controls li a:active {
   opacity: 1;
   outline: none;
   text-decoration: none;
 }
-/* line 168, ../sass/3_Components/_videoplayer.scss */
+/* line 173, ../sass/3_Components/_videoplayer.scss */
 .video-player .video-controls.disabled .controls {
   opacity: .3;
   cursor: not-allowed;
@@ -13530,7 +13536,7 @@ nav.open {
     height: 75px;
     padding: 5px;
   }
-  /* line 178, ../sass/3_Components/_videoplayer.scss */
+  /* line 183, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-controls .controls {
     float: none;
     margin: 0 auto;
@@ -13538,7 +13544,7 @@ nav.open {
     top: 25px;
     width: 98px;
   }
-  /* line 185, ../sass/3_Components/_videoplayer.scss */
+  /* line 190, ../sass/3_Components/_videoplayer.scss */
   .video-player .video-controls .slick-dots {
     justify-content: center;
     margin-top: -20px;
